@@ -2,7 +2,7 @@
   "name": "portfolio-react",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Barbara-larissa.github.io/portfolio/",
+  "homepage": "https://Barbara-larissa.github.io/meu-site/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -27,4 +27,3 @@
     "vite": "^5.2.0"
   }
 }
-

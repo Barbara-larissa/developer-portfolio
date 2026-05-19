@@ -3,8 +3,13 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import "./App.css";
 import minhaFoto from "./foto-profissional.png";
+
+
 // Componente dos Meteoros (Estilo Shadcn/Aceternity)
-import videoBurguer from "./burguer-do-bom.mp4"
+import videoBurguer from "../videos/burguer-do-bom.mp4";
+import videoVR from "../videos/vr-automotiv.mp4";
+
+
 const Meteors = ({ number = 90 }) => {
   const [meteorStyles, setMeteorStyles] = useState([]);
   useEffect(() => {
@@ -176,23 +181,16 @@ export default function App() {
       </section>
 
       {/* --- SEÇÃO MEUS PROJETOS --- */}
+      {/* --- SEÇÃO MEUS PROJETOS --- */}
       <section id="projetos" className="projects-section">
         <h2 className="section-title">Projetos em Destaque</h2>
         <div className="projects-grid">
-          {/* Card 1: Burguer do Bom (Delivery) */}
+
+          {/* Card 1: Burguer do Bom */}
           <div className="project-card">
-            {/* Etiqueta de Lançamento */}
             <div className="badge-soon">Lançamento em Breve</div>
             <div className="video-container local-video">
-              {/* 🌟 USANDO VÍDEO LOCAL: Importe o arquivo antes ou use a pasta public */}
-              <video
-                src={videoBurguer}  /* A variável importada SEM aspas */
-                controls
-                className="project-video-element"
-                preload="metadata"
-              >
-                Seu navegador não suporta vídeos HTML5.
-              </video>
+              <video src={videoBurguer} controls className="project-video-element" preload="metadata" />
             </div>
             <div className="project-content">
               <h3>Burguer do Bom</h3>
@@ -203,33 +201,20 @@ export default function App() {
                 <span>Mercado Pago</span>
               </div>
               <div className="project-links">
-                <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">
-                  Ver Código
-                </a>
-
-                {/* 🌟 Adicione este botão aqui */}
-                <button className="btn-soon" disabled>
-                  Em Breve
-                </button>
+                <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+                <button className="btn-soon" disabled>Em Breve</button>
               </div>
             </div>
           </div>
+
           {/* Card 2: Sistema Financeiro */}
           <div className="project-card">
-            {/* 🌟 Etiqueta Comercial: Posicionada no topo do card */}
             <div className="badge-comercial">Disponível para Licença</div>
-
             <div className="video-container">
-              <iframe
-                src="https://www.youtube.com/embed/hMQYXhc1-2A"
-                title="Sistema de Controle Financeiro"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen>
-              </iframe>
+              <iframe src="https://www.youtube.com/embed/hMQYXhc1-2A" title="Sistema Financeiro" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
             <div className="project-content">
-              <h3>Sistema de Controle Financeiro</h3>
+              <h3>Sistema Financeiro</h3>
               <p>Gestão financeira completa com PHP e MySQL.</p>
               <div className="tags">
                 <span>PHP</span>
@@ -237,24 +222,33 @@ export default function App() {
                 <span>Lógica</span>
               </div>
               <div className="project-links">
-                <a
-                  href="https://github.com/Barbara-larissa/Sistema-Financeiro"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary"
-                >
-                  GitHub
-                </a>
+                <a href="https://github.com/Barbara-larissa/Sistema-Financeiro" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+                <a href="https://wa.me/5543999999999" target="_blank" rel="noreferrer" className="btn-venda">Adquirir</a>
+              </div>
+            </div>
+          </div>
 
-                {/* 🌟 Novo botão de venda integrado */}
-                <a
-                  href="https://wa.me/5543999999999" /* Coloque seu número aqui */
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-venda"
-                >
-                  Adquirir Projeto
-                </a>
+          {/* Card 3: VR Automotive */}
+          {/* Card 3: VR Automotive */}
+          <div className="project-card">
+            <div className="badge-comercial">Destaque Tech</div>
+            <div className="video-container local-video">
+              <video src={videoVR} controls className="project-video-element" preload="metadata" />
+            </div>
+            <div className="project-content">
+              <h3>VR Automotive</h3>
+              <p>Showroom virtual imersivo para visualização detalhada de veículos.</p>
+
+              {/* 🌟 Tags atualizadas para mostrar React + Tailwind */}
+              <div className="tags">
+                <span>React</span>
+                <span>Tailwind CSS</span>
+                <span>UI/UX</span>
+              </div>
+
+              <div className="project-links">
+                <a href="https://github.com/Barbara-larissa/vr-automotive" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+                <a href="https://vr-automotiv.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
               </div>
             </div>
           </div>
