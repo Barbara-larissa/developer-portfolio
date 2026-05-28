@@ -217,10 +217,17 @@ export default function App() {
   </div>
 
   {/* Card 3: VR Automotive */}
-  <div className="project-card">
+<div className="project-card">
     <div className="badge-comercial">Destaque Tech</div>
     <div className="video-container local-video">
-      <video src="../videos/vr-automotiv.mp4" controls className="project-video-element" preload="metadata" />
+      <iframe 
+        src="https://www.youtube.com/embed/uG4lkNxEYs8" 
+        title="VR Automotive Demo"
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowFullScreen
+        className="project-video-element"
+      ></iframe>
     </div>
     <div className="project-content">
       <h3>VR Automotive</h3>
@@ -232,7 +239,7 @@ export default function App() {
       </div>
       <div className="project-links">
         <a href="https://github.com/Barbara-larissa/vr-automotive" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
-       <a href="https://vr-altomotive.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
+        <a href="https://vr-altomotive.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
       </div>
     </div>
   </div>
@@ -241,7 +248,14 @@ export default function App() {
   <div className="project-card">
     <div className="badge-comercial">Destaque UI/UX</div>
     <div className="video-container local-video">
-      <video src="../videos/login-interativo.mp4" controls className="project-video-element" preload="metadata" />
+      <iframe 
+        src="https://www.youtube.com/embed/vThcK4sXndQ" 
+        title="Lumen Login Demo"
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowFullScreen
+        className="project-video-element"
+      ></iframe>
     </div>
     <div className="project-content">
       <h3>Lumen Login</h3>
@@ -261,11 +275,17 @@ export default function App() {
 
   {/* Card 5: Portfólio Criativo */}
  {/* Card 5: Portfólio Criativo */}
-  <div className="project-card">
+ <div className="project-card">
     <div className="badge-comercial">Design Exclusivo</div>
     <div className="video-container local-video">
-      {/* CORREÇÃO: "portfolio" sem acento ó para coincidir com a pasta */}
-      <video src="../videos/portifolio-criativo.mp4" controls className="project-video-element" preload="metadata" />
+      <iframe 
+        src="https://www.youtube.com/embed/8xiTVxgsLa0" 
+        title="Portfólio Criativo V1 Demo"
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowFullScreen
+        className="project-video-element"
+      ></iframe>
     </div>
     <div className="project-content">
       <h3>Portfólio Criativo V1</h3>
@@ -284,26 +304,33 @@ export default function App() {
   </div>
 
   {/* 🌟 Card 6: Tech Shop */}
-  <div className="project-card">
-    <div className="badge-comercial">Premium UI/UX</div>
-    <div className="video-container local-video">
-      <video src="../videos/teck-shop.mp4" controls className="project-video-element" preload="metadata" />
+<div className="project-card">
+  <div className="badge-comercial">Premium UI/UX</div>
+  <div className="video-container local-video">
+    <iframe 
+      src="https://www.youtube.com/embed/22YunVGnQYs" 
+      title="Tech Shop Demo"
+      frameBorder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowFullScreen
+      className="project-video-element"
+    ></iframe>
+  </div>
+  <div className="project-content">
+    <h3>Tech Shop</h3>
+    <p>Plataforma de e-commerce completa para hardware e periféricos, com busca em tempo real, filtros por categoria e ordenação dinâmica de preços.</p>
+    <div className="tags">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>UI/UX</span>
     </div>
-    <div className="project-content">
-      <h3>Tech Shop</h3>
-      <p>Plataforma de e-commerce completa para hardware e periféricos, com busca em tempo real, filtros por categoria e ordenação dinâmica de preços.</p>
-      <div className="tags">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>UI/UX</span>
-      </div>
-      <div className="project-links">
-        <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
-       <button className="btn-soon" disabled>Em Breve</button>
-      </div>
+    <div className="project-links">
+      <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+      <button className="btn-soon" disabled>Em Breve</button>
     </div>
   </div>
+</div>
 
 </div>
       </section>
