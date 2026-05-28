@@ -4,26 +4,21 @@ import { loadSlim } from "@tsparticles/slim";
 import "./App.css";
 import minhaFoto from "./foto-profissional.png";
 
-
 // Componente dos Meteoros (Estilo Shadcn/Aceternity)
 import videoBurguer from "../videos/burguer-do-bom.mp4";
 import videoVR from "../videos/vr-automotiv.mp4";
-
+import videoLogin from "../videos/login-interativo.mp4";
+import videoPortfolioCriativo from "../videos/portifolio-criativo.mp4"; // 🌟 Importado o 5º vídeo da sua pasta!
 
 const Meteors = ({ number = 90 }) => {
   const [meteorStyles, setMeteorStyles] = useState([]);
   useEffect(() => {
     const styles = new Array(number).fill(true).map(() => {
-      // 50% de chance de vir do topo, 50% de vir da lateral
-      const spawnFromTop = Math.random() > 0.5
+      const spawnFromTop = Math.random() > 0.5;
       return {
-        // Se vier do topo, top é -20. Se vier da lateral, sorteia a altura (y).
         top: spawnFromTop ? "-20px" : Math.floor(Math.random() * window.innerHeight) + "px",
-        // Se vier do topo, sorteia a largura (x). Se vier da lateral, left é -20.
         left: spawnFromTop ? Math.floor(Math.random() * window.innerWidth) + "px" : "-20px",
-
-        animationDelay: Math.random() * 8 + "s", // Delays variados para não saírem juntos
-        // VELOCIDADE: Entre 10s e 18s para cruzar a tela bem devagar
+        animationDelay: Math.random() * 8 + "s",
         animationDuration: Math.floor(Math.random() * (20 - 18) + 5) + "s",
       };
     });
@@ -37,6 +32,7 @@ const Meteors = ({ number = 90 }) => {
     </>
   );
 };
+
 export default function App() {
   const [init, setInit] = useState(false);
   useEffect(() => {
@@ -46,6 +42,7 @@ export default function App() {
       setInit(true);
     });
   }, []);
+
   const particlesOptions = useMemo(() => ({
     fullScreen: { enable: true, zIndex: 0 },
     fpsLimit: 120,
@@ -57,21 +54,21 @@ export default function App() {
         value: { min: 0.1, max: 0.5 },
         animation: { enable: true, speed: 1 }
       },
-      size: { value: { min: 1, max: 3 } }, // Tamanho original/normal
+      size: { value: { min: 1, max: 3 } },
       move: { enable: true, speed: 0.2, direction: "none" },
     },
     detectRetina: true,
   }), []);
+
   return (
     <div className="app-container">
       {init && <Particles options={particlesOptions} />}
-      {/* Camada de Meteoros */}
       <Meteors number={15} />
+
       <main className="main-content">
         <h1 className="title">Barbara Larissa</h1>
         <p className="subtitle">FRONT-END ENGINEER & UI DEVELOPER</p>
         <div className="main-container-hero">
-          {/* 🚀 NOVO GRUPO PARA OS BOTÕES FICAREM LADO A LADO */}
           <div className="button-group">
             <button
               className="btn-primary"
@@ -80,7 +77,6 @@ export default function App() {
               Ver Projetos
             </button>
             <a
-              /* Substitua o  pelo seu número real */
               href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
               target="_blank"
               rel="noreferrer"
@@ -90,7 +86,6 @@ export default function App() {
               WhatsApp
             </a>
           </div>
-          {/* Ícones Sociais continuam aqui embaixo */}
           <div className="social-icons-row">
             <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="icon-link-minimal">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" className="icon-only-github" alt="GitHub" />
@@ -101,7 +96,7 @@ export default function App() {
           </div>
         </div>
       </main>
-      {/* ACRESCENTAR ABAIXO DO </main> */}
+
       <section className="diferenciais-section">
         <div className="diferenciais-grid">
           <div className="diferencial-card">
@@ -119,10 +114,9 @@ export default function App() {
             <h3>Código Limpo</h3>
             <p>Estruturas organizadas e escaláveis para facilitar a manutenção.</p>
           </div>
-
         </div>
       </section>
-      {/* --- SEÇÃO SOBRE MIM --- */}
+
       <section className="about-section">
         <div className="about-container">
           <div className="about-text">
@@ -137,7 +131,6 @@ export default function App() {
               e design estratégico, garantindo resultados reais para o negócio.
             </p>
           </div>
-
           <div className="about-image-area">
             <div className="image-frame">
               <img src={minhaFoto} alt="Barbara Larissa" className="about-profile-img" />
@@ -146,7 +139,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      {/* --- SEÇÃO STACKS --- */}
+
       <section className="stacks-section">
         <h2 className="section-title">Minhas Stacks</h2>
         <div className="stacks-grid">
@@ -158,12 +151,10 @@ export default function App() {
             <span className="stack-icon">JS</span>
             <p>JavaScript</p>
           </div>
-
           <div className="stack-card">
             <span className="stack-icon">🎨</span>
             <p>CSS3 / UI UX</p>
           </div>
-
           <div className="stack-card">
             <span className="stack-icon">🌊</span>
             <p>Tailwind CSS</p>
@@ -176,84 +167,145 @@ export default function App() {
             <span className="stack-icon">🐘</span>
             <p>PHP / MySQL</p>
           </div>
-
         </div>
       </section>
 
-      {/* --- SEÇÃO MEUS PROJETOS --- */}
-      {/* --- SEÇÃO MEUS PROJETOS --- */}
       <section id="projetos" className="projects-section">
         <h2 className="section-title">Projetos em Destaque</h2>
-        <div className="projects-grid">
+       <div className="projects-grid">
 
-          {/* Card 1: Burguer do Bom */}
-          <div className="project-card">
-            <div className="badge-soon">Lançamento em Breve</div>
-            <div className="video-container local-video">
-              <video src={videoBurguer} controls className="project-video-element" preload="metadata" />
-            </div>
-            <div className="project-content">
-              <h3>Burguer do Bom</h3>
-              <p>Sistema de delivery completo com integração de pagamentos e WhatsApp.</p>
-              <div className="tags">
-                <span>React</span>
-                <span>Firebase</span>
-                <span>Mercado Pago</span>
-              </div>
-              <div className="project-links">
-                <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
-                <button className="btn-soon" disabled>Em Breve</button>
-              </div>
-            </div>
-          </div>
+  {/* Card 1: Burguer do Bom */}
+  <div className="project-card">
+    <div className="badge-soon">Lançamento em Breve</div>
+    <div className="video-container local-video">
+      <video src="../videos/burguer-do-bom.mp4" controls className="project-video-element" preload="metadata" />
+    </div>
+    <div className="project-content">
+      <h3>Burguer do Bom</h3>
+      <p>Sistema de delivery completo com integração de pagamentos e WhatsApp.</p>
+      <div className="tags">
+        <span>React</span>
+        <span>Firebase</span>
+        <span>Mercado Pago</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+        <button className="btn-soon" disabled>Em Breve</button>
+      </div>
+    </div>
+  </div>
 
-          {/* Card 2: Sistema Financeiro */}
-          <div className="project-card">
-            <div className="badge-comercial">Disponível para Licença</div>
-            <div className="video-container">
-              <iframe src="https://www.youtube.com/embed/hMQYXhc1-2A" title="Sistema Financeiro" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </div>
-            <div className="project-content">
-              <h3>Sistema Financeiro</h3>
-              <p>Gestão financeira completa com PHP e MySQL.</p>
-              <div className="tags">
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>Lógica</span>
-              </div>
-              <div className="project-links">
-                <a href="https://github.com/Barbara-larissa/Sistema-Financeiro" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
-                <a href="https://wa.me/5543999999999" target="_blank" rel="noreferrer" className="btn-venda">Adquirir</a>
-              </div>
-            </div>
-          </div>
+  {/* Card 2: Sistema Financeiro */}
+  <div className="project-card">
+    <div className="badge-comercial">Disponível para Licença</div>
+    <div className="video-container">
+      <iframe src="https://www.youtube.com/embed/hMQYXhc1-2A" title="Sistema Financeiro" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+    </div>
+    <div className="project-content">
+      <h3>Sistema Financeiro</h3>
+      <p>Gestão financeira completa com PHP e MySQL.</p>
+      <div className="tags">
+        <span>PHP</span>
+        <span>MySQL</span>
+        <span>Lógica</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa/Sistema-Financeiro" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+        <a href="https://wa.me/5543999999999" target="_blank" rel="noreferrer" className="btn-venda">Adquirir</a>
+      </div>
+    </div>
+  </div>
 
-          {/* Card 3: VR Automotive */}
-          {/* Card 3: VR Automotive */}
-          <div className="project-card">
-            <div className="badge-comercial">Destaque Tech</div>
-            <div className="video-container local-video">
-              <video src={videoVR} controls className="project-video-element" preload="metadata" />
-            </div>
-            <div className="project-content">
-              <h3>VR Automotive</h3>
-              <p>Showroom virtual imersivo para visualização detalhada de veículos.</p>
+  {/* Card 3: VR Automotive */}
+  <div className="project-card">
+    <div className="badge-comercial">Destaque Tech</div>
+    <div className="video-container local-video">
+      <video src="../videos/vr-automotiv.mp4" controls className="project-video-element" preload="metadata" />
+    </div>
+    <div className="project-content">
+      <h3>VR Automotive</h3>
+      <p>Showroom virtual imersivo para visualização detalhada de veículos.</p>
+      <div className="tags">
+        <span>React</span>
+        <span>Tailwind CSS</span>
+        <span>UI/UX</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa/vr-automotive" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+       <a href="https://vr-altomotive.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
+      </div>
+    </div>
+  </div>
 
-              {/* 🌟 Tags atualizadas para mostrar React + Tailwind */}
-              <div className="tags">
-                <span>React</span>
-                <span>Tailwind CSS</span>
-                <span>UI/UX</span>
-              </div>
+  {/* Card 4: Lumen Login */}
+  <div className="project-card">
+    <div className="badge-comercial">Destaque UI/UX</div>
+    <div className="video-container local-video">
+      <video src="../videos/login-interativo.mp4" controls className="project-video-element" preload="metadata" />
+    </div>
+    <div className="project-content">
+      <h3>Lumen Login</h3>
+      <p>Interface de autenticação imersiva com microinterações avançadas que reagem dinamicamente às ações do usuário.</p>
+      <div className="tags">
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>CSS Moderno</span>
+        <span>UI/UX</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa/Lumem-Login" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+        <a href="https://lumem-login.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
+      </div>
+    </div>
+  </div>
 
-              <div className="project-links">
-                <a href="https://github.com/Barbara-larissa/vr-automotive" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
-                <a href="https://vr-automotiv.vercel.app" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
-              </div>
-            </div>
-          </div>
+  {/* Card 5: Portfólio Criativo */}
+ {/* Card 5: Portfólio Criativo */}
+  <div className="project-card">
+    <div className="badge-comercial">Design Exclusivo</div>
+    <div className="video-container local-video">
+      {/* CORREÇÃO: "portfolio" sem acento ó para coincidir com a pasta */}
+      <video src="../videos/portifolio-criativo.mp4" controls className="project-video-element" preload="metadata" />
+    </div>
+    <div className="project-content">
+      <h3>Portfólio Criativo V1</h3>
+      <p>Landing page pessoal construída com JavaScript puro, animações nativas e design temático estilo Chibi.</p>
+      <div className="tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Design Criativo</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+        <a href="https://barbara-larissa.github.io/barbara-portfolio/" target="_blank" rel="noreferrer" className="btn-primary">Acessar Demo</a>
+      </div>
+    </div>
+  </div>
 
-        </div>
+  {/* 🌟 Card 6: Tech Shop */}
+  <div className="project-card">
+    <div className="badge-comercial">Premium UI/UX</div>
+    <div className="video-container local-video">
+      <video src="../videos/teck-shop.mp4" controls className="project-video-element" preload="metadata" />
+    </div>
+    <div className="project-content">
+      <h3>Tech Shop</h3>
+      <p>Plataforma de e-commerce completa para hardware e periféricos, com busca em tempo real, filtros por categoria e ordenação dinâmica de preços.</p>
+      <div className="tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>UI/UX</span>
+      </div>
+      <div className="project-links">
+        <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className="btn-secondary">Ver Código</a>
+       <button className="btn-soon" disabled>Em Breve</button>
+      </div>
+    </div>
+  </div>
+
+</div>
       </section>
     </div>
   );
