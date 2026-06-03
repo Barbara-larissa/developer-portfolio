@@ -1,0 +1,29 @@
+import styles from "./Sobre.module.css";
+import minhaFoto from "./IMG/foto-profissional.png";
+
+export default function Sobre() {
+  return (
+    <section className={styles["about-section"]}>
+      <div className={styles["about-container"]}>
+        <div className={styles["about-text"]}>
+          <h2 className={styles["about-title"]}>Sobre Mim</h2>
+          <p>
+            Desenvolvedora focada em construir soluções funcionais e eficientes.
+            Com formação técnica em Web Development, foco minha atuação em criar
+            interfaces que unem performance e uma experiência intuitiva.
+          </p>
+          <p>
+            Minha abordagem é prática: resolver problemas complexos com código limpo
+            e design estratégico, garantindo resultados reais para o negócio.
+          </p>
+        </div>
+        <div className={styles["about-image-area"]}>
+          <div className={styles["image-frame"]}>
+            <img src={minhaFoto} alt="Barbara Larissa" className={styles["about-profile-img"]} />
+            <div className={styles["image-glow"]}></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

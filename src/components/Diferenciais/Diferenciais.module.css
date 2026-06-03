@@ -1,0 +1,58 @@
+/* --- SEÇÃO DE DIFERENCIAIS --- */
+.diferenciais-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 20px;
+  z-index: 10;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.diferencial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.diferencial-card:hover {
+  transform: translateY(-8px);
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.05);
+  box-shadow: 0 15px 30px rgba(168, 85, 247, 0.1);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 25px auto;
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.diferencial-card h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.diferencial-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

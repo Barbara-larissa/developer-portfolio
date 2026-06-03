@@ -1,0 +1,204 @@
+/* --- SEÇÃO DE PROJETOS --- */
+.projects-section {
+  padding: 100px 20px;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 10;
+}
+
+.section-title {
+  text-align: center;
+  width: 100%;
+  margin: 2rem 0; 
+  color: #ffffff; 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+  font-size: 2.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  background: #000; 
+}
+
+.video-container iframe,
+.project-video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;  
+  height: 100% !important; 
+  border: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+
+.project-content h3 {
+  color: #ffffff; 
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.project-content p {
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tags {
+  margin-bottom: 20px;
+}
+
+.tags span {
+  background: rgba(168, 85, 247, 0.2); 
+  color: #a855f7; 
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.project-links {
+  margin-top: auto; 
+  display: flex;
+  gap: 12px;
+  align-items: stretch; 
+  width: 100%;
+}
+
+/* --- BOTÕES DOS PROJETOS --- */
+.btn-primary, .btn-secondary, .btn-soon, .btn-venda {
+  flex: 1; 
+  height: 44px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #a855f7;
+  border: 2px solid #a855f7;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #a855f7;
+  color: #ffffff; 
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6); 
+  transform: translateY(-3px); 
+}
+
+.btn-soon {
+  background: rgba(168, 85, 247, 0.05);
+  color: rgba(255, 255, 255, 0.4);
+  border: 2px dashed rgba(168, 85, 247, 0.4); 
+  cursor: not-allowed;
+}
+
+.btn-soon:hover {
+  background: rgba(168, 85, 247, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-venda {
+  background: #a855f7;
+  color: white;
+  border: none;
+}
+
+.btn-venda:hover {
+  background: #9333ea;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+}
+
+/* --- BADGES (ETIQUETAS) --- */
+.badge-soon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 20; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: none; 
+}
+
+.badge-comercial {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo auxiliar para vídeos locais se necessário */
+.local-video {
+  background-color: #0b0f19;
+}
