@@ -3,7 +3,10 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import "./App.css";
 
-// Importação dos componentes isolados
+/* Imimport minhaFoto from "./components/Sobre/IMG/foto-profissional.png";portação da sua foto profissional seguindo a estrutura de pastas correta */
+import minhaFoto from "./components/Sobre/IMG/foto-profissional.png";
+
+/* Importação dos componentes isolados */
 import Sobre from "./components/Sobre/Sobre";
 import Projetos from "./components/Projetos/Projetos";
 import Tecnologias from "./components/Tecnologias/Tecnologias";
@@ -11,7 +14,7 @@ import Diferenciais from "./components/Diferenciais/Diferenciais";
 import Servicos from "./components/Servicos/Servicos";
 import Footer from "./components/Footer/Footer";
 
-// Componente dos Meteoros (Estilo Shadcn/Aceternity)
+/* Componente dos Meteoros (Estilo Shadcn/Aceternity) */
 const Meteors = ({ number = 90 }) => {
   const [meteorStyles, setMeteorStyles] = useState([]);
 
@@ -38,11 +41,7 @@ const Meteors = ({ number = 90 }) => {
   return (
     <>
       {meteorStyles.map((style, idx) => (
-        <span
-          key={idx}
-          className="meteor"
-          style={style}
-        ></span>
+        <span key={idx} className="meteor" style={style}></span>
       ))}
     </>
   );
@@ -50,6 +49,8 @@ const Meteors = ({ number = 90 }) => {
 
 export default function App() {
   const [init, setInit] = useState(false);
+  /* Estado para controlar a página atual: 'home' ou 'valores' */
+  const [view, setView] = useState("home");
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -58,6 +59,11 @@ export default function App() {
       setInit(true);
     });
   }, []);
+
+  /* Rola para o topo automaticamente sempre que alternar a tela */
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
 
   const particlesOptions = useMemo(
     () => ({
@@ -110,95 +116,122 @@ export default function App() {
   return (
     <div className="app-container">
       {init && <Particles options={particlesOptions} />}
-
       <Meteors number={15} />
 
-      {/* Hero */}
-      <main className="main-content">
-        <h1 className="title">Barbara Larissa</h1>
+      {view === "home" ? (
+        /* ================= PÁGINA INICIAL (HOME) ================= */
+        <>
+          {/* Hero Redesenhado em Duas Colunas */}
+          <main className="main-content">
+            <div className="hero-flex-container">
+              
+              {/* Lado Esquerdo: Textos, Botões e Links Sociais */}
+              <div className="hero-text-side">
+                <h1 className="title">Barbara Larissa</h1>
+                <p className="subtitle">FRONT-END & UI DEVELOPER</p>
 
-        <p className="subtitle">
-          FRONT-END ENGINEER & UI DEVELOPER
-        </p>
+                <div className="main-container-hero">
+                  <div className="button-group">
+                    <button
+                      className="btn-primary"
+                      onClick={() =>
+                        document.getElementById("projetos").scrollIntoView({
+                          behavior: "smooth",
+                        })
+                      }
+                    >
+                      Ver Projetos
+                    </button>
 
-        <div className="main-container-hero">
-          <div className="button-group">
+                    {/* Evento para abrir a tela de valores */}
+                    <button
+                      className="btn-servicos"
+                      onClick={() => setView("valores")}
+                    >
+                      Serviços & Valores
+                    </button>
 
-            <button
-              className="btn-primary"
-              onClick={() =>
-                document
-                  .getElementById("projetos")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                  })
-              }
-            >
-              Ver Projetos
+                    <a
+                      href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-whatsapp-hero"
+                    >
+                      <i className="fa-brands fa-whatsapp"></i>
+                      WhatsApp
+                    </a>
+                  </div>
+
+                  <div className="social-icons-row">
+                    <a
+                      href="https://github.com/Barbara-larissa"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-link-minimal"
+                    >
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                        className="icon-only-github"
+                        alt="GitHub"
+                        style={{ filter: "invert(1)" }} 
+                      />
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/in/barbara-larissa/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="icon-link-minimal"
+                    >
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                        className="icon-only-linkedin"
+                        alt="LinkedIn"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Lado Direito: Sua Foto em Círculo com Efeito Glow */}
+              <div className="hero-image-side">
+                <div className="profile-circle-wrapper">
+                  <img 
+                    src={minhaFoto} 
+                    alt="Barbara Larissa" 
+                    className="profile-avatar-img"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </main>
+
+          {/* Seções da Home */}
+          <Diferenciais />
+         <div className="container-sobre-stacks">
+            <Sobre />
+            <Tecnologias />
+          </div>
+          <Projetos />
+          <Footer />
+        </>
+      ) : (
+        /* ================= TELA EXCLUSIVA DE VALORES ================= */
+        <div className="valores-page-wrapper">
+          <div className="navigation-container">
+            <button className="btn-primary" onClick={() => setView("home")}>
+              <i className="fa-solid fa-arrow-left" style={{ marginRight: "8px" }}></i>
+              Voltar para o Início
             </button>
-
-            <button
-              className="btn-servicos"
-              onClick={() =>
-                document
-                  .getElementById("servicos")
-                  .scrollIntoView({
-                    behavior: "smooth",
-                  })
-              }
-            >
-              Serviços & Valores
-            </button>
-
-            <a
-              href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-              target="_blank"
-              rel="noreferrer"
-              className="btn-whatsapp-hero"
-            >
-              <i className="fa-brands fa-whatsapp"></i>
-              WhatsApp
-            </a>
-
           </div>
 
-          <div className="social-icons-row">
-            <a
-              href="https://github.com/Barbara-larissa"
-              target="_blank"
-              rel="noreferrer"
-              className="icon-link-minimal"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                className="icon-only-github"
-                alt="GitHub"
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/barbara-larissa/"
-              target="_blank"
-              rel="noreferrer"
-              className="icon-link-minimal"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                className="icon-only-linkedin"
-                alt="LinkedIn"
-              />
-            </a>
-          </div>
+          {/* Tabela de serviços */}
+          <Servicos />
+          
+          <Footer />
         </div>
-      </main>
-
-      {/* Seções */}
-      <Diferenciais />
-      <Sobre />
-      <Tecnologias />
-      <Servicos />
-      <Projetos />
-      <Footer />
+      )}
     </div>
   );
 }

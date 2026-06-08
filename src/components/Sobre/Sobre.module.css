@@ -71,17 +71,7 @@
   object-position: center;
 }
 
-.image-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 110%;
-  height: 110%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 70%);
-  filter: blur(20px);
-  z-index: 1;
-}
+
 
 /* --- RESPONSIVIDADE (PARA CELULAR) --- */
 @media (max-width: 768px) {

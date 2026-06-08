@@ -1,244 +1,454 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght=200;300&family=Poppins:wght=400;500;700&display=swap');
-
-/* 1. Reset e Fundo da Tela */
+/* ==========================================================================
+   1. RESET, BASE E CONTAINER GLOBAL
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Container Principal com Rolagem Liberada */
+body {
+  background-color: #0b071a; /* Fundo escuro premium */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
 .app-container {
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(circle, rgb(20, 0, 35) 0%, rgb(0, 0, 0) 100%);
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
-  overflow-y: auto;
-  overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+  position: relative;
 }
 
-/* 2. Estilo do Meteoro (A cabeça do meteoro) */
+/* Efeito dos Meteoros (Shadcn) */
 .meteor {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  background-color: #ffffff;
-  border-radius: 9999px;
-  box-shadow: 0 0 10px 2px rgba(168, 85, 247, 0.5);
-  transform: rotate(215deg);
+  width: 2px;
+  height: 2px;
+  background-color: #94a3b8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 10px #ffffff, 0 0 20px #a855f7;
+  transform: rotate(-45deg);
   pointer-events: none;
-  animation: meteor-animation linear infinite;
+  animation: meteor linear infinite;
 }
 
-/* 3. O Rastro (A cauda degradê) */
-.meteor::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 80px; 
-  height: 1px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
-}
-
-/* 4. Animação de Movimento */
-@keyframes meteor-animation {
+@keyframes meteor {
   0% {
-    transform: rotate(215deg) translateX(0);
-    opacity: 0;
-  }
-  5% {
+    transform: rotate(-45deg) translateX(0);
     opacity: 1;
   }
-  95% {
+  70% {
     opacity: 1;
   }
   100% {
-    transform: rotate(215deg) translateX(-2200px); 
+    transform: rotate(-45deg) translateX(-1000px);
     opacity: 0;
   }
 }
 
-/* 5. Conteúdo Central Hero (Texto) */
+/* ==========================================================================
+   2. SEÇÃO HERO - ESTRUTURA GERAL (DESKTOP)
+   ========================================================================== */
 .main-content {
-  padding-top: 100px; 
-  padding-bottom: 50px; 
+  width: 100%;
+  min-height: 85vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 80px 20px;
   z-index: 10;
+  position: relative;
+}
+
+.hero-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+/* Lado Esquerdo - Textos e Botões */
+.hero-text-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.8rem, 8vw, 4rem); 
-  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.8rem;
+  font-weight: 300;
   color: #ffffff;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  letter-spacing: clamp(4px, 2vw, 12px);
   line-height: 1.1;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
-  overflow-wrap: break-word;
+  margin-bottom: 15px;
 }
 
 .subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  color: #a855f7;
-  letter-spacing: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a855f7; /* Roxo principal */
+  letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.8;
-  margin-top: 0.5rem;
+  margin-bottom: 35px;
 }
 
+/* Lado Direito - Wrapper do Círculo da Foto */
+.hero-image-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.profile-circle-wrapper {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(255, 255, 255, 0.02));
+  border: 2px solid rgba(168, 85, 247, 0.25);
+  padding: 10px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.08);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-circle-wrapper:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(168, 85, 247, 0.25);
+  transform: translateY(-5px);
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   3. ELEMENTOS DE AÇÃO (BOTÕES E ÍCONES SOCIAIS)
+   ========================================================================== */
 .main-container-hero {
   display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  gap: 40px;              
-  margin-top: 30px;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
 }
 
-/* Container dos botões do Hero */
 .button-group {
-  display: flex;      
-  flex-direction: row; 
-  gap: 20px;          
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;   
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
 
-/* Botão Primário do Hero */
-.btn-primary {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  border-radius: 12px;
+/* Estilo Base Padronizado para os Botões */
+.btn-primary, 
+.btn-servicos, 
+.btn-whatsapp-hero {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 14px;
   cursor: pointer;
   text-decoration: none;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Botão Ver Projetos */
+.btn-primary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .btn-primary:hover {
-  transform: scale(1.1);   
-  background: #a855f7;     
-  border-color: #a855f7;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+  background: #ffffff;
+  color: #0b071a;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Botão de WhatsApp do Hero */
-.btn-whatsapp-hero {
-  height: 50px;
-  padding: 0 30px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.btn-whatsapp-hero:hover {
-  transform: scale(1.05);
-  background-color: #20ba5a;
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
-}
-
-/* Redes Sociais do Hero */
-.social-icons-row {
-  display: flex;          
-  gap: 35px;
-  justify-content: center;
-  margin-top: 20px;      
-}
-
-.icon-only-github, .icon-only-linkedin {
-  width: 38px;
-  height: 38px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.icon-only-github {
-  filter: invert(1);
-}
-
-.icon-link-minimal:hover {
-  transform: scale(1.3) translateY(-5px);
-}
-
-.icon-link-minimal:hover .icon-only-linkedin {
-  filter: drop-shadow(0 0 10px #a855f7);
-}
-
-.icon-link-minimal:hover .icon-only-github {
-  filter: invert(1) drop-shadow(0 0 10px #a855f7);
-}
-
-/* Ajuste do Canvas de fundo */
-#tsparticles canvas {
-  opacity: 0.8;
-}
-
-
-
-
-
-
+/* Botão Serviços & Valores */
 .btn-servicos {
-  padding: 18px 32px;
-  border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
+  background: rgba(255, 255, 255, 0.03);
   color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .btn-servicos:hover {
-  transform: translateY(-3px);
-
-  background: #a855f7;
+  background: rgba(168, 85, 247, 0.1);
   border-color: #a855f7;
+}
 
-  box-shadow:
-    0 0 15px rgba(168, 85, 247, 0.5),
-    0 0 30px rgba(168, 85, 247, 0.4),
-    0 0 45px rgba(168, 85, 247, 0.3);
+/* Botão WhatsApp */
+.btn-whatsapp-hero {
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
 
-  color: #fff;
+.btn-whatsapp-hero:hover {
+  background: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Linha de Ícones Sociais (Abaixo dos botões no desktop) */
+.social-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-link-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.icon-link-minimal:hover {
+  transform: translateY(-3px);
+}
+
+.icon-only-github,
+.icon-only-linkedin {
+  width: 26px;
+  height: 26px;
+}
+
+/* ==========================================================================
+   4. TELA SECUNDÁRIA (VALORES / EXCLUSIVA)
+   ========================================================================== */
+.valores-page-wrapper {
+  width: 100%;
+  max-width: 1140px;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* ==========================================================================
+   ALINHAMENTO: SOBRE MIM (ESQUERDA) + MINHAS STACKS (DIREITA)
+   ========================================================================== */
+
+/* Cria o alinhamento em duas colunas no Desktop no espaço em branco */
+.container-sobre-stacks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Alinha o topo do texto com o topo das stacks */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+  gap: 50px; /* Espaço elegante entre o seu texto e os cards */
+  z-index: 10;
+  position: relative;
+}
+
+/* Força os dois componentes internos a dividirem o espaço igualmente */
+.container-sobre-stacks > section,
+.container-sobre-stacks > div,
+.container-sobre-stacks > cubic-bezier {
+  flex: 1;
+  width: 50%;
+  margin: 0 !important;
+  padding: 0 !important; /* Limpa espaçamentos antigos que jogavam as Stacks para baixo */
+}
+
+/* Garante que os cards dentro do componente de tecnologias se ajustem à nova coluna */
+.container-sobre-stacks .tecnologias-grid,
+.container-sobre-stacks .stacks-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+/* Remove qualquer centralização forçada antiga do título das Stacks */
+.container-sobre-stacks #tecnologias h2,
+.container-sobre-stacks .stacks-title {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE PARA CELULAR (MOBILE)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* No celular ele desfaz as colunas para não amassar os cards */
+  .container-sobre-stacks {
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 0 15px !important;
+  }
+
+  /* Devolve 100% de largura para cada um no celular */
+  .container-sobre-stacks > section,
+  .container-sobre-stacks > div,
+  .container-sobre-stacks > cubic-bezier {
+    width: 100% !important;
+  }
+
+  /* Centraliza os títulos no mobile para manter o padrão do seu projeto */
+  .container-sobre-stacks #tecnologias h2,
+  .container-sobre-stacks .stacks-title {
+    text-align: center !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   5. RECONSTRUÇÃO DO RESPONSIVO (MOBILE COMPLETAMENTE ALINHADO)
+   ========================================================================== */
+
+@media screen and (max-width: 992px) {
+  .title {
+    font-size: 3rem;
+  }
+  .profile-circle-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Alinha e força o grid vertical ordenado (Foto -> Textos) */
+  .hero-flex-container {
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 20px 10px !important;
+    gap: 35px !important;
+  }
+
+  /* Garante que a foto venha primeiro no topo */
+  .hero-image-side {
+    order: -1 !important; 
+    width: 100% !important;
+  }
+
+  .profile-circle-wrapper {
+    width: 220px !important;
+    height: 220px !important;
+    padding: 6px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(168, 85, 247, 0.15) !important;
+  }
+
+  /* Alinha a caixa de textos ao centro absoluto */
+  .hero-text-side {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Ajusta tamanho e espaçamento das fontes */
+  .title {
+    font-size: 2.2rem !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.2 !important;
+  }
+
+  .subtitle {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    padding: 0 10px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .main-container-hero {
+    align-items: center !important;
+    width: 100% !important;
+    gap: 25px !important;
+  }
+
+  /* Organiza os botões em lista vertical idêntica e sem quebras estranhas */
+  .button-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 290px !important; /* Limita largura dos botões para visual elegante */
+    margin: 0 auto !important;
+    gap: 14px !important;
+  }
+
+  /* Transforma todos os botões em blocos de largura total do grupo */
+  .btn-primary, 
+  .btn-servicos, 
+  .btn-whatsapp-hero {
+    width: 100% !important;
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    height: 48px !important;
+  }
+
+  /* Alinha perfeitamente as redes sociais embaixo de tudo no mobile */
+  .social-icons-row {
+    justify-content: center !important;
+    margin-top: 5px !important;
+    gap: 24px !important;
+  }
+
+  .icon-only-github,
+  .icon-only-linkedin {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .navigation-container {
+    justify-content: center !important;
+  }
 }

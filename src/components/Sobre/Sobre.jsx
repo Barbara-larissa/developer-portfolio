@@ -18,10 +18,7 @@ export default function Sobre() {
           </p>
         </div>
         <div className={styles["about-image-area"]}>
-          <div className={styles["image-frame"]}>
-            <img src={minhaFoto} alt="Barbara Larissa" className={styles["about-profile-img"]} />
-            <div className={styles["image-glow"]}></div>
-          </div>
+        
         </div>
       </div>
     </section>
