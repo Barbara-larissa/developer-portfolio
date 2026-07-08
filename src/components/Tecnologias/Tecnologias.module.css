@@ -61,3 +61,18 @@
   font-size: 0.9rem;
   margin: 0;
 }
+/* ... seu código existente ... */
+
+/* Ajuste o tamanho do ícone aqui */
+.stack-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Aplicação das cores por ordem (nth-child) */
+.stack-card:nth-child(1) .stack-icon { color: #61DAFB; } /* React */
+.stack-card:nth-child(2) .stack-icon { color: #F7DF1E; } /* JS */
+.stack-card:nth-child(3) .stack-icon { color: #1572B6; } /* CSS3 */
+.stack-card:nth-child(4) .stack-icon { color: #06B6D4; } /* Tailwind */
+.stack-card:nth-child(5) .stack-icon { color: #FFCA28; } /* Firebase */
+.stack-card:nth-child(6) .stack-icon { color: #777BB4; } /* PHP */

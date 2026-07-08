@@ -4,7 +4,7 @@ import { loadSlim } from "@tsparticles/slim";
 import "./App.css";
 
 /* Imimport minhaFoto from "./components/Sobre/IMG/foto-profissional.png";portação da sua foto profissional seguindo a estrutura de pastas correta */
-import minhaFoto from "./components/Sobre/IMG/foto-profissional.png";
+import minhaFoto from "./components/Sobre/IMG/eu-1.png";
 
 /* Importação dos componentes isolados */
 import Sobre from "./components/Sobre/Sobre";

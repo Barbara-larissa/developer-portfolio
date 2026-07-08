@@ -2,8 +2,12 @@
 .diferenciais-section {
   width: 100%;
   max-width: 1200px;
-  padding: 80px 20px;
+  /* Reduzi o 80px superior para 40px ou o valor que preferir */
+  padding: 0px 20px 80px 20px; 
   z-index: 10;
+  
+  /* Se você quiser "puxar" a seção para cima, adicione margem negativa */
+  margin-top: -30px; 
 }
 
 .diferenciais-grid {

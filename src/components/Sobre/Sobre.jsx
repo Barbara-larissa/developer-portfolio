@@ -1,5 +1,5 @@
 import styles from "./Sobre.module.css";
-import minhaFoto from "./IMG/foto-profissional.png";
+
 
 export default function Sobre() {
   return (

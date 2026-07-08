@@ -1,4 +1,6 @@
 import styles from "./Tecnologias.module.css";
+import { FaReact, FaJs, FaCss3Alt, FaFire, FaPhp } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
 export default function Tecnologias() {
   return (
@@ -7,32 +9,32 @@ export default function Tecnologias() {
       <div className={styles["stacks-grid"]}>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>⚛️</span>
+          <FaReact className={styles["stack-icon"]} />
           <p>React</p>
         </div>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>JS</span>
+          <FaJs className={styles["stack-icon"]} />
           <p>JavaScript</p>
         </div>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>🎨</span>
+          <FaCss3Alt className={styles["stack-icon"]} />
           <p>CSS3 / UI UX</p>
         </div>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>🌊</span>
-          <p>Tailwind CSS</p>
+          <SiNextdotjs className={styles["stack-icon"]} />
+          <p>Next.js</p>
         </div>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>🔥</span>
+          <FaFire className={styles["stack-icon"]} />
           <p>Firebase</p>
         </div>
         
         <div className={styles["stack-card"]}>
-          <span className={styles["stack-icon"]}>🐘</span>
+          <FaPhp className={styles["stack-icon"]} />
           <p>PHP / MySQL</p>
         </div>
 
