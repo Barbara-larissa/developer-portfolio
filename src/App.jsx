@@ -5,7 +5,7 @@ import "./App.css";
 
 /* Imimport minhaFoto from "./components/Sobre/IMG/foto-profissional.png";portação da sua foto profissional seguindo a estrutura de pastas correta */
 import minhaFoto from "./components/Sobre/IMG/eu-1.png";
-
+import Chatbot from './components/Chatbot/Chatbot';
 /* Importação dos componentes isolados */
 import Sobre from "./components/Sobre/Sobre";
 import Projetos from "./components/Projetos/Projetos";
@@ -114,124 +114,149 @@ export default function App() {
   );
 
   return (
-    <div className="app-container">
-      {init && <Particles options={particlesOptions} />}
-      <Meteors number={15} />
+    <>
+      <div className="app-container">
+        {init && <Particles options={particlesOptions} />}
+        <Meteors number={15} />
 
-      {view === "home" ? (
-        /* ================= PÁGINA INICIAL (HOME) ================= */
-        <>
-          {/* Hero Redesenhado em Duas Colunas */}
-          <main className="main-content">
-            <div className="hero-flex-container">
-              
-              {/* Lado Esquerdo: Textos, Botões e Links Sociais */}
-              <div className="hero-text-side">
-                <h1 className="title">Barbara Larissa</h1>
-                <p className="subtitle">FRONT-END & UI DEVELOPER</p>
+        {view === "home" ? (
+          /* ================= PÁGINA INICIAL (HOME) ================= */
+          <>
+            {/* Hero Redesenhado em Duas Colunas */}
+            <main className="main-content">
+              <div className="hero-flex-container">
 
-                <div className="main-container-hero">
-                  <div className="button-group">
-                    <button
-                      className="btn-primary"
-                      onClick={() =>
-                        document.getElementById("projetos").scrollIntoView({
-                          behavior: "smooth",
-                        })
-                      }
-                    >
-                      Ver Projetos
-                    </button>
+                {/* Lado Esquerdo: Textos, Botões e Links Sociais */}
+                <div className="hero-text-side">
+                  <h1 className="title">Barbara Larissa</h1>
+                  <p className="subtitle">FRONT-END & UI DEVELOPER</p>
 
-                    {/* Evento para abrir a tela de valores */}
-                    <button
-                      className="btn-servicos"
-                      onClick={() => setView("valores")}
-                    >
-                      Serviços & Valores
-                    </button>
+                  <div className="main-container-hero">
+                    <div className="button-group">
+                      <button
+                        className="btn-primary"
+                        onClick={() =>
+                          document.getElementById("projetos").scrollIntoView({
+                            behavior: "smooth",
+                          })
+                        }
+                      >
+                        Ver Projetos
+                      </button>
 
-                    <a
-                      href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn-whatsapp-hero"
-                    >
-                      <i className="fa-brands fa-whatsapp"></i>
-                      WhatsApp
-                    </a>
-                  </div>
+                      {/* Evento para abrir a tela de valores */}
+                      <button
+                        className="btn-servicos"
+                        onClick={() => setView("valores")}
+                      >
+                        Serviços & Valores
+                      </button>
 
-                  <div className="social-icons-row">
-                    <a
-                      href="https://github.com/Barbara-larissa"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-link-minimal"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                        className="icon-only-github"
-                        alt="GitHub"
-                        style={{ filter: "invert(1)" }} 
-                      />
-                    </a>
+                      <a
+                        href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-whatsapp-hero"
+                      >
+                        <i className="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                      </a>
+                    </div>
 
-                    <a
-                      href="https://www.linkedin.com/in/barbara-larissa/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-link-minimal"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                        className="icon-only-linkedin"
-                        alt="LinkedIn"
-                      />
-                    </a>
+                    <div className="social-icons-row">
+                      <a
+                        href="https://github.com/Barbara-larissa"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="icon-link-minimal"
+                      >
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                          className="icon-only-github"
+                          alt="GitHub"
+                          style={{ filter: "invert(1)" }}
+                        />
+                      </a>
+
+                      <a
+                        href="https://www.linkedin.com/in/barbara-larissa/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="icon-link-minimal"
+                      >
+                        <img
+                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                          className="icon-only-linkedin"
+                          alt="LinkedIn"
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Lado Direito: Sua Foto em Círculo com Efeito Glow */}
-              <div className="hero-image-side">
-                <div className="profile-circle-wrapper">
-                  <img 
-                    src={minhaFoto} 
-                    alt="Barbara Larissa" 
-                    className="profile-avatar-img"
-                  />
+                {/* Lado Direito: Sua Foto em Círculo com Efeito Glow */}
+                <div className="hero-image-side ">
+                  <div className="profile-circle-wrapper">
+                    <img
+                      src={minhaFoto}
+                      alt="Barbara Larissa"
+                      className="profile-avatar-img"
+                    />
+                  </div>
+
+
+
+
                 </div>
-              </div>
 
+              </div>
+            </main>
+
+            {/* Seções da Home */}
+            {/* ... (código anterior) ... */}
+
+           {/* Hero: A Lola aparece aqui */}
+{/* Hero já deve ter a classe mobile-trigger para aparecer lá */}
+
+<Diferenciais />
+
+<div className="container-sobre-stacks">
+  <Sobre />
+  <Tecnologias />
+</div>
+
+{/* Projetos: adicione a classe aqui */}
+<div id="projetos" className="mobile-trigger">
+  <Projetos />
+</div>
+
+{/* Footer: adicione se quiser que ela apareça aqui também */}
+<div className="footer mobile-trigger">
+  <Footer />
+</div>
+
+
+
+            {/* ... (código posterior) ... */}
+          </>
+        ) : (
+          /* ================= TELA EXCLUSIVA DE VALORES ================= */
+          <div className="valores-page-wrapper">
+            <div className="navigation-container">
+              <button className="btn-primary" onClick={() => setView("home")}>
+                <i className="fa-solid fa-arrow-left" style={{ marginRight: "8px" }}></i>
+                Voltar para o Início
+              </button>
             </div>
-          </main>
 
-          {/* Seções da Home */}
-          <Diferenciais />
-         <div className="container-sobre-stacks">
-            <Sobre />
-            <Tecnologias />
+            {/* Tabela de serviços */}
+            <Servicos />
           </div>
-          <Projetos />
-          <Footer />
-        </>
-      ) : (
-        /* ================= TELA EXCLUSIVA DE VALORES ================= */
-        <div className="valores-page-wrapper">
-          <div className="navigation-container">
-            <button className="btn-primary" onClick={() => setView("home")}>
-              <i className="fa-solid fa-arrow-left" style={{ marginRight: "8px" }}></i>
-              Voltar para o Início
-            </button>
-          </div>
+        )}
+      </div>
 
-          {/* Tabela de serviços */}
-          <Servicos />
-          
-          <Footer />
-        </div>
-      )}
-    </div>
+      {/* CHATBOT POSICIONADO FORA DO CONTAINER PRINCIPAL PARA PERMANECER FIXO */}
+      <Chatbot />
+    </>
   );
 }

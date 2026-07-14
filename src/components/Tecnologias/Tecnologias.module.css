@@ -29,7 +29,7 @@
 
 .stack-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(233, 30, 99, 0.2);
   padding: 20px 15px; 
   border-radius: 15px;
   display: flex;
@@ -41,18 +41,17 @@
   flex: 1; 
   max-width: 150px; 
 }
-
 .stack-card:hover {
   transform: translateY(-5px);
-  background: rgba(168, 85, 247, 0.1);
-  border-color: #a855f7;
-  box-shadow: 0 10px 20px rgba(168, 85, 247, 0.1);
+  background: rgba(233, 30, 99, 0.1);
+  border-color: #e91e63;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.1);
 }
 
 .stack-icon {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #a855f7;
+  color: #e91e63;
 }
 
 .stack-card p {

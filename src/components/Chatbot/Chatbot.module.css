@@ -1,0 +1,270 @@
+/* src/components/Chatbot/Chatbot.module.css */
+.chatContainer {
+  position: fixed;
+  bottom: 250px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto; /* container pode receber clique nos filhos com auto */
+}
+
+.speechBubble {
+  position: relative;
+  background: white;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  pointer-events: none; /* clique atravessa o balão */
+  z-index: 9998;
+}
+
+.speechBubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent;
+}
+
+.chatButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10000;
+  position: relative;
+  padding: 0;
+}
+
+.chatButton img {
+  width: 250px !important;
+  height: 150px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  display: block;
+  transition: transform 0.3s ease;
+  animation: float 3s infinite ease-in-out;
+}
+
+.chatButton:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+/* Janela do chat quando aberta */
+.chatWindow {
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Área com as mensagens */
+.mensagens {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+}
+
+/* Mensagem enviada pelo bot (Lola) */
+.msgBot {
+  align-self: flex-start;
+  background: #f1f1f1;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 12px 12px 12px 2px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+/* Mensagem enviada pelo usuário */
+.msgUsuario {
+  align-self: flex-end;
+  background: #6c5ce7;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 12px 12px 2px 12px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+/* Campo de digitar + botão enviar */
+.inputArea {
+  display: flex;
+  border-top: 1px solid #eee;
+  padding: 10px;
+  gap: 8px;
+}
+
+.inputArea input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.inputArea input:focus {
+  border-color: #6c5ce7;
+}
+
+.inputArea button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.inputArea button:hover {
+  background: #5a4bd4;
+}
+
+
+
+/* Estilo para a nova área de sugestões */
+.sugestoesArea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px 15px 10px 15px;
+  background: white;
+  justify-content: flex-start;
+}
+
+.sugestoesArea button {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #555;
+  border-radius: 15px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sugestoesArea button:hover {
+  background: #6c5ce7;
+  color: white;
+  border-color: #6c5ce7;
+}
+
+
+.closeButton {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f30f0f;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 5px 15px;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.closeButton:hover {
+    color: #6c5ce7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet */
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+  .chatContainer {
+    position: absolute;
+    bottom: 20px; /* Ajustado para ficar mais visível */
+    right: 20px;
+    margin: 0;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 768px) {
+  .chatContainer {
+    position: fixed;
+    /* Ajuste fino para não sobrepor nada importante */
+    bottom: 20px !important; 
+    right: 20px !important;
+    margin: 0;
+    /* Reduzindo o tamanho total aqui para não quebrar o layout */
+    transform: scale(0.85); 
+    transform-origin: bottom right;
+  }
+
+  .chatWindow {
+    /* Garante que ela suba acima do botão se necessário */
+    margin-bottom: 70px !important; 
+  }
+
+  .chatButton img {
+    /* Diminui o ícone da Lola no mobile para ele não ocupar a tela toda */
+    width: 120px !important;
+    height: 80px !important;
+  }
+
+  .speechBubble {
+    font-size: 11px;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    max-width: 150px;
+  }
+}

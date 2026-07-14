@@ -30,12 +30,11 @@ body {
   height: 2px;
   background-color: #94a3b8;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 10px #ffffff, 0 0 20px #a855f7;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 10px #ffffff, 0 0 20px #e91e63;
   transform: rotate(-45deg);
   pointer-events: none;
   animation: meteor linear infinite;
 }
-
 @keyframes meteor {
   0% {
     transform: rotate(-45deg) translateX(0);
@@ -99,12 +98,11 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #a855f7; /* Roxo principal */
+  color: #e91e63; /* Cor alterada */
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 35px;
 }
-
 /* Lado Direito - Wrapper do Círculo da Foto */
 .hero-image-side {
   display: flex;
@@ -118,17 +116,17 @@ body {
   width: 340px;
   height: 340px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(255, 255, 255, 0.02));
-  border: 2px solid rgba(168, 85, 247, 0.25);
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.15), rgba(255, 255, 255, 0.02));
+  border: 2px solid rgba(233, 30, 99, 0.25);
   padding: 10px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(233, 30, 99, 0.08);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .profile-circle-wrapper:hover {
-  border-color: rgba(168, 85, 247, 0.5);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(168, 85, 247, 0.25);
+  border-color: rgba(233, 30, 99, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(233, 30, 99, 0.25);
   transform: translateY(-5px);
 }
 
@@ -193,14 +191,13 @@ body {
 .btn-servicos {
   background: rgba(255, 255, 255, 0.03);
   color: #ffffff;
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(233, 30, 99, 0.3);
 }
 
 .btn-servicos:hover {
-  background: rgba(168, 85, 247, 0.1);
-  border-color: #a855f7;
+  background: rgba(233, 30, 99, 0.1);
+  border-color: #e91e63;
 }
-
 /* Botão WhatsApp */
 .btn-whatsapp-hero {
   background: #25d366;
@@ -381,13 +378,12 @@ body {
     width: 100% !important;
   }
 
-  .profile-circle-wrapper {
+ .profile-circle-wrapper {
     width: 220px !important;
     height: 220px !important;
     padding: 6px !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(168, 85, 247, 0.15) !important;
-  }
-
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(233, 30, 99, 0.15) !important;
+}
   /* Alinha a caixa de textos ao centro absoluto */
   .hero-text-side {
     align-items: center !important;

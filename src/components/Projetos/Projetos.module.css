@@ -29,14 +29,14 @@
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(233, 30, 99, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  border-color: #a855f7;
-  background: rgba(168, 85, 247, 0.05);
+  border-color: #e91e63;
+  background: rgba(233, 30, 99, 0.05);
 }
 
 .video-container {
@@ -84,8 +84,8 @@
 }
 
 .tags span {
-  background: rgba(168, 85, 247, 0.2); 
-  color: #a855f7; 
+  background: rgba(233, 30, 99, 0.2); 
+  color: #e91e63; 
   padding: 5px 12px;
   border-radius: 50px;
   font-size: 0.8rem;
@@ -120,52 +120,52 @@
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #6366f1, #a855f7);
+  background: linear-gradient(90deg, #e91e63, #c2185b);
   color: #ffffff;
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #a855f7;
-  border: 2px solid #a855f7;
+  color: #e91e63;
+  border: 2px solid #e91e63;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background-color: #a855f7;
+  background-color: #e91e63;
   color: #ffffff; 
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6); 
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.6); 
   transform: translateY(-3px); 
 }
 
 .btn-soon {
-  background: rgba(168, 85, 247, 0.05);
+  background: rgba(233, 30, 99, 0.05);
   color: rgba(255, 255, 255, 0.4);
-  border: 2px dashed rgba(168, 85, 247, 0.4); 
+  border: 2px dashed rgba(233, 30, 99, 0.4); 
   cursor: not-allowed;
 }
 
 .btn-soon:hover {
-  background: rgba(168, 85, 247, 0.1);
+  background: rgba(233, 30, 99, 0.1);
   color: rgba(255, 255, 255, 0.6);
 }
 
 .btn-venda {
-  background: #a855f7;
+  background: #e91e63;
   color: white;
   border: none;
 }
 
 .btn-venda:hover {
-  background: #9333ea;
+  background: #c2185b;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
 }
 
 /* --- BADGES (ETIQUETAS) --- */
@@ -173,7 +173,7 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: linear-gradient(90deg, #6366f1, #a855f7);
+  background: linear-gradient(90deg, #e91e63, #c2185b);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
@@ -198,7 +198,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo auxiliar para vídeos locais se necessário */
 .local-video {
   background-color: #0b0f19;
 }
