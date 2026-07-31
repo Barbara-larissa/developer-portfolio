@@ -38,11 +38,11 @@ export default function Projetos() {
         <div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Disponível para Licença</div>
           <div className={styles["video-container"]}>
-            <iframe 
-              src="https://www.youtube.com/embed/hMQYXhc1-2A" 
-              title="Sistema Financeiro" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            <iframe
+              src="https://www.youtube.com/embed/hMQYXhc1-2A"
+              title="Sistema Financeiro"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
@@ -208,37 +208,65 @@ export default function Projetos() {
 
 
 
-<div className={styles["project-card"]}>
-  <div className={styles["badge-comercial"]}>Web Site Oficial</div>
-  <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
-    <iframe
-      src="https://www.youtube.com/embed/-sq3ZJGCCk0"
-      title="Studio Lena Cauassu"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className={styles["project-video-element"]}
-    ></iframe>
-  </div>
-  <div className={styles["project-content"]}>
-    <h3>Studio Lena Cauassu</h3>
-    <p>Site oficial desenvolvido com foco em experiência do usuário (UX), identidade visual personalizada e layout responsivo de alta performance.</p>
-    <div className={styles["tags"]}>
-      <span>React</span>
-      <span>Front-end</span>
-      <span>UI/UX</span>
-      <span>Design</span>
-    </div>
-    <div className={styles["project-links"]}>
-      <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>GitHub</a>
-      <a href="https://studio-lena.vercel.app" target="_blank" rel="noreferrer" className={styles["btn-primary"]}>Acessar Site</a>
-    </div>
-  </div>
-</div>
+        <div className={styles["project-card"]}>
+          <div className={styles["badge-comercial"]}>Web Site Oficial</div>
+          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+            <iframe
+              src="https://www.youtube.com/embed/-sq3ZJGCCk0"
+              title="Studio Lena Cauassu"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={styles["project-video-element"]}
+            ></iframe>
+          </div>
+          <div className={styles["project-content"]}>
+            <h3>Studio Lena Cauassu</h3>
+            <p>Site oficial desenvolvido com foco em experiência do usuário (UX), identidade visual personalizada e layout responsivo de alta performance.</p>
+            <div className={styles["tags"]}>
+              <span>React</span>
+              <span>Front-end</span>
+              <span>UI/UX</span>
+              <span>Design</span>
+            </div>
+            <div className={styles["project-links"]}>
+              <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>GitHub</a>
+              <a href="https://studio-lena.vercel.app" target="_blank" rel="noreferrer" className={styles["btn-primary"]}>Acessar Site</a>
+            </div>
+          </div>
+        </div>
 
 
 
-
+        {/* Card: Novo Projeto */}
+        <div className={styles["project-card"]}>
+          <div className={styles["badge-comercial"]}>Destaque Front-End</div>
+          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+            <iframe
+              src="https://www.youtube.com/embed/S6TSKz1mwzg"
+              title="Demonstração do Projeto"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={styles["project-video-element"]}
+            ></iframe>
+          </div>
+          <div className={styles["project-content"]}>
+            <h3>Nome do Projeto</h3>
+            <p>Descrição detalhada sobre o funcionamento e os diferenciais técnicos desta aplicação.</p>
+            <div className={styles["tags"]}>
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>UI/UX</span>
+            </div>
+            <div className={styles["project-links"]}>
+              <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>GitHub</a>
+              <a href="https://3dguinchos.com.br" target="_blank" rel="noreferrer" className={styles["btn-primary"]}>
+                Acessar Demo
+              </a>
+            </div>
+          </div>
+        </div>
 
 
 

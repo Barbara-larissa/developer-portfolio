@@ -5,7 +5,7 @@ import "./App.css";
 
 /* Imimport minhaFoto from "./components/Sobre/IMG/foto-profissional.png";portação da sua foto profissional seguindo a estrutura de pastas correta */
 import minhaFoto from "./components/Sobre/IMG/eu-1.png";
-import Chatbot from './components/Chatbot/Chatbot';
+import Feedbacks from './components/Feedbacks/Feedbacks';
 /* Importação dos componentes isolados */
 import Sobre from "./components/Sobre/Sobre";
 import Projetos from "./components/Projetos/Projetos";
@@ -215,25 +215,31 @@ export default function App() {
             {/* Seções da Home */}
             {/* ... (código anterior) ... */}
 
-           {/* Hero: A Lola aparece aqui */}
-{/* Hero já deve ter a classe mobile-trigger para aparecer lá */}
+            {/* Hero: A Lola aparece aqui */}
+            {/* Hero já deve ter a classe mobile-trigger para aparecer lá */}
 
-<Diferenciais />
+            <Diferenciais />
 
-<div className="container-sobre-stacks">
-  <Sobre />
-  <Tecnologias />
-</div>
+            <div className="container-sobre-stacks">
+              <Sobre />
+              <Tecnologias />
+            </div>
 
-{/* Projetos: adicione a classe aqui */}
-<div id="projetos" className="mobile-trigger">
-  <Projetos />
-</div>
+            {/* Projetos: adicione a classe aqui */}
+            <div id="projetos" className="mobile-trigger">
+              <Projetos />
+            </div>
 
-{/* Footer: adicione se quiser que ela apareça aqui também */}
-<div className="footer mobile-trigger">
-  <Footer />
-</div>
+
+
+
+               <Feedbacks />
+
+
+            {/* Footer: adicione se quiser que ela apareça aqui também */}
+            <div className="footer mobile-trigger">
+              <Footer />
+            </div>
 
 
 
@@ -256,7 +262,7 @@ export default function App() {
       </div>
 
       {/* CHATBOT POSICIONADO FORA DO CONTAINER PRINCIPAL PARA PERMANECER FIXO */}
-      <Chatbot />
+     
     </>
   );
 }
