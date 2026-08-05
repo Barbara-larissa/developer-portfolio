@@ -1,6 +1,6 @@
 import styles from "./Tecnologias.module.css";
-import { FaReact, FaJs, FaCss3Alt, FaFire, FaPhp } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { FaReact, FaJs, FaCss3Alt, FaPhp } from "react-icons/fa";
+import { SiNextdotjs, SiSupabase } from "react-icons/si";
 
 export default function Tecnologias() {
   return (
@@ -29,8 +29,8 @@ export default function Tecnologias() {
         </div>
         
         <div className={styles["stack-card"]}>
-          <FaFire className={styles["stack-icon"]} />
-          <p>Firebase</p>
+          <SiSupabase className={styles["stack-icon"]} />
+          <p>Supabase</p>
         </div>
         
         <div className={styles["stack-card"]}>
@@ -41,4 +41,4 @@ export default function Tecnologias() {
       </div>
     </section>
   );
-} 
+}
