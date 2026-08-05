@@ -1,4 +1,3 @@
-
 .feedbackSection {
   padding: 80px 20px;
   max-width: 1200px;
@@ -22,7 +21,9 @@
 .singleFeedbackContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* Faz com que os cards estiquem para ter a mesma altura */
+  gap: 30px;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -31,8 +32,11 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 20px;
-  max-width: 550px; /* Tamanho ideal para o print aparecer legível e bonito */
-  width: 100%;
+  width: 500px; /* Largura fixa igual para os dois */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -40,11 +44,12 @@
 
 .feedbackCard:hover {
   transform: translateY(-5px);
-  border-color: #ff2a85; /* Tom rosa em destaque */
+  border-color: #ff2a85;
 }
 
 .imageContainer {
   width: 100%;
+  height: 320px; /* Altura fixa para o espaço da imagem em ambos os cards */
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -55,8 +60,8 @@
 
 .feedbackImg {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: contain; /* Mantém a proporção do print sem distorcer */
   border-radius: 8px;
   display: block;
 }

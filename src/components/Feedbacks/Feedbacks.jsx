@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './Feedbacks.module.css';
 import feedbackImg from './img/fedback.png';
+import feedbackImg2 from './img/2.png';
 
 export default function Feedbacks() {
     return (
@@ -12,7 +13,13 @@ export default function Feedbacks() {
             <div className={styles.singleFeedbackContainer}>
                 <div className={styles.feedbackCard}>
                     <div className={styles.imageContainer}>
-                        <img src={feedbackImg} alt="Feedback de projeto" className={styles.feedbackImg} />
+                        <img src={feedbackImg} alt="Feedback de projeto 1" className={styles.feedbackImg} />
+                    </div>
+                </div>
+
+                <div className={styles.feedbackCard}>
+                    <div className={styles.imageContainer}>
+                        <img src={feedbackImg2} alt="Feedback de projeto 2" className={styles.feedbackImg} />
                     </div>
                 </div>
             </div>

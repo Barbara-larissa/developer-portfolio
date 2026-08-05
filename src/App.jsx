@@ -11,7 +11,7 @@ import Sobre from "./components/Sobre/Sobre";
 import Projetos from "./components/Projetos/Projetos";
 import Tecnologias from "./components/Tecnologias/Tecnologias";
 import Diferenciais from "./components/Diferenciais/Diferenciais";
-
+import Timeline from './components/Timeline/Timeline';
 import Footer from "./components/Footer/Footer";
 
 /* Componente dos Meteoros (Estilo Shadcn/Aceternity) */
@@ -145,7 +145,7 @@ export default function App() {
                       </button>
 
                       {/* Evento para abrir a tela de valores */}
-                     
+
 
                       <a
                         href="https://wa.me/5543996818242?text=Olá%20Barbara!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
@@ -228,9 +228,9 @@ export default function App() {
 
 
 
-               <Feedbacks />
+            <Feedbacks />
 
-
+            <Timeline />
             {/* Footer: adicione se quiser que ela apareça aqui também */}
             <div className="footer mobile-trigger">
               <Footer />
@@ -257,7 +257,7 @@ export default function App() {
       </div>
 
       {/* CHATBOT POSICIONADO FORA DO CONTAINER PRINCIPAL PARA PERMANECER FIXO */}
-     
+
     </>
   );
 }
