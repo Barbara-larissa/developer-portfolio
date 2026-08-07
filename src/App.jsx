@@ -13,7 +13,7 @@ import Tecnologias from "./components/Tecnologias/Tecnologias";
 import Diferenciais from "./components/Diferenciais/Diferenciais";
 import Timeline from './components/Timeline/Timeline';
 import Footer from "./components/Footer/Footer";
-
+import Typewriter from "./components/Typewriter/Typewriter";
 /* Componente dos Meteoros (Estilo Shadcn/Aceternity) */
 const Meteors = ({ number = 90 }) => {
   const [meteorStyles, setMeteorStyles] = useState([]);
@@ -129,7 +129,9 @@ export default function App() {
                 {/* Lado Esquerdo: Textos, Botões e Links Sociais */}
                 <div className="hero-text-side">
                   <h1 className="title">Barbara Larissa</h1>
-                  <p className="subtitle">FRONT-END & UI DEVELOPER</p>
+<p className="subtitle">
+  <Typewriter words={["FRONT-END & UI DEVELOPER"]} speed={100} />
+</p>
 
                   <div className="main-container-hero">
                     <div className="button-group">
