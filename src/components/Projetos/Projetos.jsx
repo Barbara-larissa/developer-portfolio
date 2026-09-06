@@ -23,8 +23,8 @@ export default function Projetos() {
             <h3>Burguer do Bom</h3>
             <p>Sistema de delivery completo com integração de pagamentos e WhatsApp.</p>
             <div className={styles["tags"]}>
-              <span>React</span>
-              <span>Firebase</span>
+              <span>javascript</span>
+              <span>Supabase</span>
               <span>Mercado Pago</span>
             </div>
             <div className={styles["project-links"]}>
@@ -177,33 +177,33 @@ export default function Projetos() {
         </div>
 
         {/* Card 7: Agencia Viagem */}
-       <div className={styles["project-card"]}>
-  <div className={styles["badge-comercial"]}>Premium UI/UX</div>
-  <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
-    <iframe
-      src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Ag%C3%AAncia_Copa_2026_-_Google_Chrome_2026-05-28_14-55-20_sthbjb"
-      title="Agência de Viagens Demo"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className={styles["project-video-element"]}
-    ></iframe>
-  </div>
-  <div className={styles["project-content"]}>
-    <h3>Agência de Viagens</h3>
-    <p>Plataforma moderna de turismo para exploração de destinos, reserva de pacotes e interface imersiva focada na experiência do usuário.</p>
-    <div className={styles["tags"]}>
-      <span>React</span>
-      <span>JavaScript</span>
-      <span>CSS Moderno</span>
-      <span>UI/UX</span>
-    </div>
-    <div className={styles["project-links"]}>
-      <a href="https://github.com/Barbara-larissa/luxe-seoul" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>Ver Código</a>
-      <a href="https://luxe-seoul-s6te.vercel.app" target="_blank" rel="noreferrer" className={styles["btn-primary"]}>Acessar Demo</a>
-    </div>
-  </div>
-</div>
+        <div className={styles["project-card"]}>
+          <div className={styles["badge-comercial"]}>Premium UI/UX</div>
+          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Ag%C3%AAncia_Copa_2026_-_Google_Chrome_2026-05-28_14-55-20_sthbjb"
+              title="Agência de Viagens Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className={styles["project-video-element"]}
+            ></iframe>
+          </div>
+          <div className={styles["project-content"]}>
+            <h3>Agência de Viagens</h3>
+            <p>Plataforma moderna de turismo para exploração de destinos, reserva de pacotes e interface imersiva focada na experiência do usuário.</p>
+            <div className={styles["tags"]}>
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>CSS Moderno</span>
+              <span>UI/UX</span>
+            </div>
+            <div className={styles["project-links"]}>
+              <a href="https://github.com/Barbara-larissa/luxe-seoul" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>Ver Código</a>
+              <a href="https://luxe-seoul-s6te.vercel.app" target="_blank" rel="noreferrer" className={styles["btn-primary"]}>Acessar Demo</a>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -239,12 +239,12 @@ export default function Projetos() {
 
 
         {/* Card: Novo Projeto */}
-       <div className={styles["project-card"]}>
+        <div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Destaque Front-End</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
               src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-07-23_22-55-19_ayradi"
-              title="Demonstração do Projeto"
+              title="3D Guinchos 24 Horas"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -252,12 +252,13 @@ export default function Projetos() {
             ></iframe>
           </div>
           <div className={styles["project-content"]}>
-            <h3>Nome do Projeto</h3>
+            <h3>3D Guinchos 24 Horas</h3>
             <p>Descrição detalhada sobre o funcionamento e os diferenciais técnicos desta aplicação.</p>
             <div className={styles["tags"]}>
               <span>React</span>
               <span>JavaScript</span>
               <span>UI/UX</span>
+              <span>Google Ads</span>
             </div>
             <div className={styles["project-links"]}>
               <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>GitHub</a>
@@ -271,6 +272,60 @@ export default function Projetos() {
 
 
 
+
+        {/* Card: 3D Guinchos 24 Horas */}
+
+        <div className={styles["project-card"]}>
+          <div className={styles["badge-comercial"]}>Projeto Comercial</div>
+
+          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_1_p%C3%A1gina_-_Pessoal_Microsoft_Edge_2026-07-25_18-22-00_jlflzz"
+              title="3D Guinchos 24 Horas"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={styles["project-video-element"]}
+            ></iframe>
+          </div>
+
+          <div className={styles["project-content"]}>
+            <h3>3D Guinchos 24 Horas</h3>
+
+            <p>
+              Site institucional desenvolvido com React e TypeScript, focado em
+              performance, SEO, responsividade e integração com Google Ads e
+              WhatsApp para geração de leads.
+            </p>
+
+            <div className={styles["tags"]}>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Google Ads</span>
+              <span>UI/UX</span>
+            </div>
+
+            <div className={styles["project-links"]}>
+              <a
+                href="https://github.com/Barbara-larissa"
+                target="_blank"
+                rel="noreferrer"
+                className={styles["btn-secondary"]}
+              >
+                GitHub
+              </a>
+
+              <a
+                href="https://3dguinchos.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className={styles["btn-primary"]}
+              >
+                Acessar Site
+              </a>
+            </div>
+          </div>
+        </div>
 
 
 
