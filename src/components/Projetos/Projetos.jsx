@@ -7,33 +7,61 @@ export default function Projetos() {
       <div className={styles["projects-grid"]}>
 
         {/* Card 1: Burguer do Bom */}
-        <div className={styles["project-card"]}>
-          <div className={styles["badge-soon"]}>Lançamento em Breve</div>
-          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
-            <iframe
-              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Burguer_do_Bom___O_Sabor_que_vai_at%C3%A9_voc%C3%AA_-_Google_Chrome_2026-03-12_14-05-04_emj6if"
-              title="Burguer do Bom Demo"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className={styles["project-video-element"]}
-            ></iframe>
-          </div>
-          <div className={styles["project-content"]}>
-            <h3>Burguer do Bom</h3>
-            <p>Sistema de delivery completo com integração de pagamentos e WhatsApp.</p>
-            <div className={styles["tags"]}>
-              <span>javascript</span>
-              <span>Supabase</span>
-              <span>Mercado Pago</span>
-            </div>
-            <div className={styles["project-links"]}>
-              <a href="https://github.com/Barbara-larissa" target="_blank" rel="noreferrer" className={styles["btn-secondary"]}>Ver Código</a>
-              <button className={styles["btn-soon"]} disabled>Em Breve</button>
-            </div>
-          </div>
-        </div>
+       <div className={styles["project-card"]}>
 
+  <div className={styles["badge-soon"]}>Projeto em Destaque</div>
+
+  <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+    <iframe
+      src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Sabor_Real_X-Tudo_e_Dog%C3%A3o_na_Zona_Norte_de_Londrina_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-09-23_23-26-02_zncbeg"
+      title="Sabor Real - Sistema de Delivery"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      className={styles["project-video-element"]}
+    ></iframe>
+  </div>
+
+  <div className={styles["project-content"]}>
+
+    <h3>Sabor Real</h3>
+
+    <p>
+      Sistema de delivery completo com cardápio, carrinho,
+      integração com Mercado Pago, WhatsApp, ViaCEP e painel
+      administrativo para gerenciamento de pedidos.
+    </p>
+
+    <div className={styles["tags"]}>
+      <span>React</span>
+      <span>TypeScript</span>
+      <span>Node.js</span>
+      <span>Mercado Pago</span>
+    </div>
+
+    <div className={styles["project-links"]}>
+      <a
+        href="https://github.com/Barbara-larissa/sabor-real-lanches"
+        target="_blank"
+        rel="noreferrer"
+        className={styles["btn-secondary"]}
+      >
+        Ver Código
+      </a>
+
+      <a
+        href="https://sabor-real-lanches.vercel.app/"
+        target="_blank"
+        rel="noreferrer"
+        className={styles["btn-secondary"]}
+      >
+        Ver Projeto
+      </a>
+    </div>
+
+  </div>
+
+</div>
         {/* Card 2: Sistema Financeiro */}
         <div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Disponível para Licença</div>
