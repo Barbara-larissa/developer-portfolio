@@ -1,13 +1,86 @@
+import { useRef, useState } from "react";
 import styles from "./Projetos.module.css";
 
 export default function Projetos() {
+  const [mostrarProjetos, setMostrarProjetos] = useState(false);
+  const [animando, setAnimando] = useState(false);
+  const carouselRef = useRef(null);
+
+  const moverCarrossel = (direcao) => {
+    const carrossel = carouselRef.current;
+    if (!carrossel) return;
+
+    carrossel.scrollBy({
+      left: direcao * Math.max(carrossel.clientWidth * 0.82, 280),
+      behavior: "smooth",
+    });
+  };
+
+  const selecionarVisualizacao = (exibirProjetos) => {
+    if (animando || mostrarProjetos === exibirProjetos) return;
+
+    setAnimando(true);
+
+    window.setTimeout(() => {
+      setMostrarProjetos(exibirProjetos);
+      window.setTimeout(() => setAnimando(false), 40);
+    }, 220);
+  };
+
   return (
     <section id="projetos" className={styles["projects-section"]}>
-      <h2 className={styles["section-title"]}>Projetos em Destaque</h2>
-      <div className={styles["projects-grid"]}>
+      <h2 className={styles["section-title"]}>
+        {mostrarProjetos ? "Projetos Pessoais e de Estudo" : "Projetos para Clientes"}
+      </h2>
 
-        {/* Card 1: Burguer do Bom */}
-       <div className={styles["project-card"]}>
+      <div className={styles["project-filters"]} role="group" aria-label="Filtrar projetos">
+        <button
+          type="button"
+          onClick={() => selecionarVisualizacao(false)}
+          className={`${styles["filter-button"]} ${!mostrarProjetos ? styles["filter-button-active"] : ""}`}
+          aria-pressed={!mostrarProjetos}
+          disabled={animando}
+        >
+          Clientes
+        </button>
+        <button
+          type="button"
+          onClick={() => selecionarVisualizacao(true)}
+          className={`${styles["filter-button"]} ${mostrarProjetos ? styles["filter-button-active"] : ""}`}
+          aria-pressed={mostrarProjetos}
+          disabled={animando}
+        >
+          Projetos
+        </button>
+      </div>
+
+      <div
+        className={`${styles["projects-content"]} ${animando ? styles["projects-content-exit"] : ""}`}
+        aria-live="polite"
+      >
+        {mostrarProjetos ? (
+          <div className={styles["carousel-viewport"]}>
+            <div className={styles["carousel-controls"]} aria-label="Navegacao dos projetos pessoais">
+              <button
+                type="button"
+                className={styles["carousel-arrow"]}
+                onClick={() => moverCarrossel(-1)}
+                aria-label="Ver projetos anteriores"
+              >
+                <span aria-hidden="true">&#8592;</span>
+              </button>
+              <button
+                type="button"
+                className={styles["carousel-arrow"]}
+                onClick={() => moverCarrossel(1)}
+                aria-label="Ver proximos projetos"
+              >
+                <span aria-hidden="true">&#8594;</span>
+              </button>
+            </div>
+
+            <div ref={carouselRef} className={styles["carousel-track"]}>
+<div className={styles["project-card"]}>
 
   <div className={styles["badge-soon"]}>Projeto em Destaque</div>
 
@@ -62,12 +135,12 @@ export default function Projetos() {
   </div>
 
 </div>
-        {/* Card 2: Sistema Financeiro */}
-        <div className={styles["project-card"]}>
+
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Disponível para Licença</div>
           <div className={styles["video-container"]}>
             <iframe
-              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=sistema_de_Controle_Financeiro___Nome_-_Google_Chrome_2026-03-31_15-46-13_jdqyp4"
+              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Sabor_Real_X-Tudo_e_Dog%C3%A3o_na_Zona_Norte_de_Londrina_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-09-23_23-26-02_zncbeg"
               title="Sistema Financeiro"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -89,8 +162,7 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* Card 3: VR Automotive */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Destaque Tech</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -117,8 +189,7 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* Card 4: Lumen Login */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Destaque UI/UX</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -146,8 +217,7 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* Card 5: Portfólio Criativo */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Design Exclusivo</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -175,8 +245,7 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* Card 6: Tech Shop */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Premium UI/UX</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -204,8 +273,7 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* Card 7: Agencia Viagem */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Premium UI/UX</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -232,11 +300,31 @@ export default function Projetos() {
             </div>
           </div>
         </div>
+            </div>
+          </div>
+        ) : (
+          <div className={styles["carousel-viewport"]}>
+            <div className={styles["carousel-controls"]} aria-label="Navegacao dos projetos para clientes">
+              <button
+                type="button"
+                className={styles["carousel-arrow"]}
+                onClick={() => moverCarrossel(-1)}
+                aria-label="Ver clientes anteriores"
+              >
+                <span aria-hidden="true">&#8592;</span>
+              </button>
+              <button
+                type="button"
+                className={styles["carousel-arrow"]}
+                onClick={() => moverCarrossel(1)}
+                aria-label="Ver proximos clientes"
+              >
+                <span aria-hidden="true">&#8594;</span>
+              </button>
+            </div>
 
-
-
-
-        <div className={styles["project-card"]}>
+            <div ref={carouselRef} className={styles["carousel-track"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Web Site Oficial</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -264,10 +352,7 @@ export default function Projetos() {
           </div>
         </div>
 
-
-
-        {/* Card: Novo Projeto */}
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Destaque Front-End</div>
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
             <iframe
@@ -297,13 +382,7 @@ export default function Projetos() {
           </div>
         </div>
 
-
-
-
-
-        {/* Card: 3D Guinchos 24 Horas */}
-
-        <div className={styles["project-card"]}>
+<div className={styles["project-card"]}>
           <div className={styles["badge-comercial"]}>Projeto Comercial</div>
 
           <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
@@ -355,22 +434,54 @@ export default function Projetos() {
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div className={styles["project-card"]}>
+          <div className={styles["badge-comercial"]}>Projeto Comercial</div>
+          <div className={`${styles["video-container"]} ${styles["local-video"]}`}>
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Guincho_24h_em_Londrina_Camb%C3%A9_e_Ibipor%C3%A3___3D_-_Google_Chrome_2026-09-11_13-46-41_trndrf"
+              title="3D Guinchos 24 Horas - Londrina, Cambé e Ibiporã"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={styles["project-video-element"]}
+            ></iframe>
+          </div>
+          <div className={styles["project-content"]}>
+            <h3>3D Guinchos 24 Horas</h3>
+            <p>
+              Site para divulgação dos serviços de guincho 24 horas em Londrina,
+              Cambé e Ibiporã, com foco em apresentar o atendimento e facilitar
+              o contato de clientes.
+            </p>
+            <div className={styles["tags"]}>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Google Ads</span>
+              <span>UI/UX</span>
+            </div>
+            <div className={styles["project-links"]}>
+              <a
+                href="https://github.com/Barbara-larissa"
+                target="_blank"
+                rel="noreferrer"
+                className={styles["btn-secondary"]}
+              >
+                GitHub
+              </a>
+              <a
+                href="https://3dguinchos.com.br"
+                target="_blank"
+                rel="noreferrer"
+                className={styles["btn-primary"]}
+              >
+                Acessar Site
+              </a>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

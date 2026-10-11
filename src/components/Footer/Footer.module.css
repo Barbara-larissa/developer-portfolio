@@ -120,6 +120,53 @@
   box-shadow: 0 5px 15px rgba(233, 30, 99, 0.2);
 }
 
+/* ===== Ajuste dos ícones de redes sociais ===== */
+
+.github-image,
+.linkedin-image {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* O ícone do GitHub é preto, então inverto para branco no fundo escuro */
+.github-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+/* LinkedIn em tom claro, combinando com os outros ícones */
+.linkedin-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.email-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover: ícones acendem junto com o círculo */
+.social-icon:hover .github-image,
+.social-icon:hover .linkedin-image {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.social-icon:hover .email-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
 @media screen and (max-width: 768px) {
   .footer-card {
     flex-direction: column;
