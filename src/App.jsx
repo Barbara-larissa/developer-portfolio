@@ -223,10 +223,9 @@ export default function App() {
             </div>
 
             {/* Projetos: adicione a classe aqui */}
-            <div id="projetos" className="mobile-trigger">
-              <Projetos />
-            </div>
-
+          <div className="mobile-trigger">
+  <Projetos />
+</div>
 
 
 
