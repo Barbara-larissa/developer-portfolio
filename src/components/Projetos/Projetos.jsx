@@ -41,7 +41,7 @@ export default function Projetos() {
       descricao: "Gestao financeira completa com PHP e MySQL.",
       tags: ["PHP", "MySQL", "Logica"],
       video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Sabor_Real_X-Tudo_e_Dog%C3%A3o_na_Zona_Norte_de_Londrina_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-09-23_23-26-02_zncbeg",
+        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Design_sem_nome_4_ju25iw",
       videoTitle: "Sistema Financeiro",
       badge: "Disponivel para Licenca",
       badgeType: "commercial",
