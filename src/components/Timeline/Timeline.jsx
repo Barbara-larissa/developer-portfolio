@@ -3,6 +3,12 @@ import styles from './Timeline.module.css';
 
 const timelineData = [
   {
+  period: "2026",
+  title: "Sabor da Vovó — Landing Page Comercial",
+  description: "Desenvolvimento de uma landing page responsiva para uma marmitaria em Londrina, utilizando React e Tailwind CSS. Projeto com apresentação de cardápio, tamanhos de marmitas, horário de funcionamento, localização e integração com WhatsApp para facilitar o atendimento e receber pedidos.",
+  tag: "Destaque"
+},
+  {
     period: "2026 - Hoje",
     title: "Início do Curso Superior em ADS & Formação Full Stack",
     description: "Desenvolvimento e entrega de projetos profissionais para clientes reais, unindo engenharia de software e foco comercial.",
@@ -18,7 +24,7 @@ const timelineData = [
     period: "2026",
     title: "Desenvolvimento do Site Studio Lena",
     description: "Criação de plataforma web personalizada, estruturação de sistema de delivery e aplicações modernas utilizando React e tecnologias de nuvem.",
-    tag: "Projeto"
+    tag: "Destaque"
   },
   {
     period: "2025",

@@ -122,66 +122,102 @@ export default function Projetos() {
     },
   ];
 
-  const projetosClientes = [
-    {
-      titulo: "Studio Lena Cauassu",
-      descricao:
-        "Site oficial desenvolvido com foco em experiencia do usuario (UX), identidade visual personalizada e layout responsivo de alta performance.",
-      tags: ["React", "Front-end", "UI/UX", "Design"],
-      video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Lena_Cabelereira_-_Google_Chrome_2026-07-08_15-32-43_cmg1il",
-      videoTitle: "Studio Lena Cauassu",
-      badge: "Web Site Oficial",
-      badgeType: "commercial",
-      links: [
-        { label: "GitHub", href: "https://github.com/Barbara-larissa", type: "secondary" },
-        { label: "Acessar Site", href: "https://studio-lena.vercel.app", type: "primary" },
-      ],
-    },
-    {
-      titulo: "3D Guinchos 24 Horas",
-      descricao: "Site institucional com foco em performance, SEO, responsividade e integracao com Google Ads e WhatsApp para geracao de leads.",
-      tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
-      video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-07-23_22-55-19_ayradi",
-      videoTitle: "3D Guinchos 24 Horas",
-      badge: "Destaque Front-End",
-      badgeType: "commercial",
-      links: [
-        { label: "GitHub", href: "https://github.com/Barbara-larissa", type: "secondary" },
-        { label: "Acessar Demo", href: "https://3dguinchos.com.br", type: "primary" },
-      ],
-    },
-    {
-      titulo: "3D Guinchos 24 Horas",
-      descricao: "Site institucional desenvolvido com React e TypeScript, focado em performance, SEO, responsividade e integracao com Google Ads e WhatsApp para geracao de leads.",
-      tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
-      video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_1_p%C3%A1gina_-_Pessoal_Microsoft_Edge_2026-07-25_18-22-00_jlflzz",
-      videoTitle: "3D Guinchos 24 Horas",
-      badge: "Projeto Comercial",
-      badgeType: "commercial",
-      links: [
-        { label: "GitHub", href: "https://github.com/Barbara-larissa", type: "secondary" },
-        { label: "Acessar Site", href: "https://3dguinchos.com.br", type: "primary" },
-      ],
-    },
-    {
-      titulo: "3D Guinchos 24 Horas",
-      descricao: "Site para divulgacao dos servicos de guincho 24 horas em Londrina, Cambe e Ibipora, com foco em apresentar o atendimento e facilitar o contato de clientes.",
-      tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
-      video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Guincho_24h_em_Londrina_Camb%C3%A9_e_Ibipor%C3%A3___3D_-_Google_Chrome_2026-09-11_13-46-41_trndrf",
-      videoTitle: "3D Guinchos 24 Horas - Londrina, Cambe e Ibipora",
-      badge: "Projeto Comercial",
-      badgeType: "commercial",
-      links: [
-        { label: "GitHub", href: "https://github.com/Barbara-larissa", type: "secondary" },
-        { label: "Acessar Site", href: "https://3dguinchos.com.br", type: "primary" },
-      ],
-    },
-  ];
+ const projetosClientes = [
+  {
+    titulo: "Studio Lena Cauassu",
+    descricao:
+      "Site oficial desenvolvido com foco em experiência do usuário (UX), identidade visual personalizada e layout responsivo de alta performance.",
+    tags: ["React", "Front-end", "UI/UX", "Design"],
+    video:
+      "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Lena_Cabelereira_-_Google_Chrome_2026-07-08_15-32-43_cmg1il",
+    videoTitle: "Studio Lena Cauassu",
+    badge: "Destaque",
+    badgeType: "Destaque",
+    links: [
+      {
+        label: "Acessar Site",
+        href: "https://studio-lena.vercel.app",
+        type: "primary",
+      },
+    ],
+  },
 
+  {
+    titulo: "3D Guinchos 24 Horas",
+    descricao:
+      "Site institucional com foco em performance, SEO, responsividade e integração com Google Ads e WhatsApp para geração de leads.",
+    tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
+    video:
+      "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-07-23_22-55-19_ayradi",
+    videoTitle: "3D Guinchos 24 Horas",
+    badge: "Destaque ",
+    badgeType: "Destaque",
+    links: [
+      {
+        label: "Acessar Site",
+        href: "https://3dguinchos.com.br",
+        type: "primary",
+      },
+    ],
+  },
+
+  {
+    titulo: "3D Guinchos 24 Horas",
+    descricao:
+      "Site institucional desenvolvido com React e TypeScript, focado em performance, SEO, responsividade e integração com Google Ads e WhatsApp para geração de leads.",
+    tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
+    video:
+      "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=3D_Guinchos_24_Horas___Leve_Pesado_e_mais_1_p%C3%A1gina_-_Pessoal_Microsoft_Edge_2026-07-25_18-22-00_jlflzz",
+    videoTitle: "3D Guinchos 24 Horas",
+    badge: "Destaque",
+    badgeType: "Destaque",
+    links: [
+      {
+        label: "Acessar Site",
+        href: "https://3dguinchos.com.br",
+        type: "primary",
+      },
+    ],
+  },
+
+  {
+    titulo: "3D Guinchos 24 Horas",
+    descricao:
+      "Site para divulgação dos serviços de guincho 24 horas em Londrina, Cambé e Ibiporã, com foco em apresentar o atendimento e facilitar o contato de clientes.",
+    tags: ["React", "TypeScript", "Google Ads", "UI/UX"],
+    video:
+      "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Guincho_24h_em_Londrina_Camb%C3%A9_e_Ibipor%C3%A3___3D_-_Google_Chrome_2026-09-11_13-46-41_trndrf",
+    videoTitle: "3D Guinchos 24 Horas - Londrina, Cambé e Ibiporã",
+    badge: "Destaque",
+    badgeType: "Destaque",
+    links: [
+      {
+        label: "Acessar Site",
+        href: "https://3dguinchos.com.br",
+        type: "primary",
+      },
+    ],
+  },
+
+  {
+    titulo: "Sabor da Vovó",
+    descricao:
+      "Landing page desenvolvida para uma marmitaria em Londrina, com apresentação dos tamanhos de marmitas, informações comerciais, horário de funcionamento, localização e contato direto pelo WhatsApp.",
+    tags: ["React", "Tailwind CSS", "JavaScript", "UI/UX", "Responsividade"],
+    video:
+      "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=202611151740_h17owl",
+    videoTitle: "Sabor da Vovó - Landing Page",
+    badge: "Destaque",
+    badgeType: "commercial",
+    links: [
+      {
+        label: "Acessar Site",
+        href: "https://www.sabordavovo.com/",
+        type: "primary",
+      },
+    ],
+  },
+];
   const projetosAtuais = mostrarProjetos ? projetosPessoais : projetosClientes;
 
   return (
@@ -272,9 +308,9 @@ export default function Projetos() {
                         rel="noreferrer"
                         className={
                           styles[
-                            link.type === "primary"
-                              ? "btn-primary"
-                              : link.type === "sale"
+                          link.type === "primary"
+                            ? "btn-primary"
+                            : link.type === "sale"
                               ? "btn-venda"
                               : "btn-secondary"
                           ]
