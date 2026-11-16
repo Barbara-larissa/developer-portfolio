@@ -3,148 +3,158 @@
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
 .titulo {
   font-size: 2.2rem;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 10px;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .subtitulo {
-  color: #a0aec0;
+  color: rgba(255, 255, 255, 0.82);
   font-size: 1rem;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .singleFeedbackContainer {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Faz com que os cards estiquem para ter a mesma altura */
-  gap: 30px;
+  align-items: stretch;
+  gap: 32px;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .feedbackCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 20px;
-  width: 500px; /* Largura fixa igual para os dois */
+  background: linear-gradient(155deg, #1b1042 0%, #110829 100%);
+  border: 1.5px solid rgba(255, 0, 204, 0.45);
+  border-radius: 20px;
+  padding: 24px;
+  width: 500px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow:
+    -6px -6px 24px rgba(255, 0, 204, 0.18),
+    6px 6px 28px rgba(161, 0, 255, 0.25),
+    0 12px 32px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
 .feedbackCard:hover {
-  transform: translateY(-5px);
-  border-color: #ff2a85;
+  transform: translateY(-7px);
+  border-color: var(--neon-pink);
+  background: linear-gradient(155deg, #241557 0%, #160b36 100%);
+  box-shadow:
+    -10px -10px 35px rgba(255, 0, 204, 0.35),
+    10px 10px 40px rgba(161, 0, 255, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.55);
 }
 
 .imageContainer {
   width: 100%;
-  height: 320px; /* Altura fixa para o espaço da imagem em ambos os cards */
-  border-radius: 12px;
+  height: 320px;
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #111;
+  background: #0b071a;
+  border: 1px solid rgba(161, 0, 255, 0.38);
+  box-shadow: inset 0 0 20px rgba(114, 0, 255, 0.18);
 }
 
 .feedbackImg {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Mantém a proporção do print sem distorcer */
+  object-fit: contain;
   border-radius: 8px;
   display: block;
 }
-
 
 /* =========================
    RESPONSIVO
 ========================= */
 
-/* Tablets */
 @media (max-width: 768px) {
-    .feedbackSection {
-        padding: 60px 20px;
-    }
+  .feedbackSection {
+    padding: 60px 20px;
+  }
 
-    .titulo {
-        font-size: 32px;
-    }
+  .titulo {
+    font-size: 32px;
+  }
 
-    .subtitulo {
-        font-size: 17px;
-        text-align: center;
-    }
+  .subtitulo {
+    font-size: 17px;
+    text-align: center;
+  }
 
-    .singleFeedbackContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        width: 100%;
-    }
+  .singleFeedbackContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+  }
 
-    .feedbackCard {
-        width: 100%;
-        max-width: 500px;
-    }
+  .feedbackCard {
+    width: 100%;
+    max-width: 500px;
+  }
 
-    .imageContainer {
-        width: 100%;
-        overflow: hidden;
-    }
+  .imageContainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
 
-    .feedbackImg {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+  .feedbackImg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
-
-/* Celulares */
 @media (max-width: 480px) {
-    .feedbackSection {
-        padding: 45px 15px;
-    }
+  .feedbackSection {
+    padding: 45px 15px;
+  }
 
-    .titulo {
-        font-size: 28px;
-    }
+  .titulo {
+    font-size: 28px;
+  }
 
-    .subtitulo {
-        font-size: 15px;
-        margin-bottom: 25px;
-    }
+  .subtitulo {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
 
-    .singleFeedbackContainer {
-        gap: 20px;
-    }
+  .singleFeedbackContainer {
+    gap: 20px;
+  }
 
-    .feedbackCard {
-        width: 100%;
-        max-width: 100%;
-    }
+  .feedbackCard {
+    width: 100%;
+    max-width: 100%;
+  }
 
-    .imageContainer {
-        width: 100%;
-        border-radius: 10px;
-    }
+  .imageContainer {
+    width: 100%;
+    border-radius: 10px;
+  }
 
-    .feedbackImg {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
+  .feedbackImg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }

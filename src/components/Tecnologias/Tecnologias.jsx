@@ -19,81 +19,39 @@ import {
   SiMercadopago,
 } from "react-icons/si";
 
+const STACKS = [
+  { name: "React", Icon: FaReact, color: "#61DAFB" },
+  { name: "JavaScript", Icon: FaJs, color: "#F7DF1E" },
+  { name: "CSS3 / UI UX", Icon: FaCss3Alt, color: "#2965F1" },
+  { name: "Next.js", Icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
+  { name: "PHP / MySQL", Icon: FaPhp, color: "#8892BF" },
+  { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+  { name: "Node.js", Icon: FaNodeJs, color: "#68A063" },
+  { name: "Express", Icon: SiExpress, color: "#E2E8F0" },
+  { name: "Vite", Icon: SiVite, color: "#BD34FE" },
+  { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#38BDF8" },
+  { name: "Git / GitHub", Icon: FaGitAlt, color: "#F05032" },
+  { name: "Mercado Pago", Icon: SiMercadopago, color: "#00B1EA" },
+];
+
 export default function Tecnologias() {
   return (
-    <section className={styles["stacks-section"]}>
-
+    <section id="tecnologias" className={styles["stacks-section"]}>
       <h2 className={styles["section-title"]}>Minhas Stacks</h2>
 
       <div className={styles["stacks-grid"]}>
-
-        <div className={styles["stack-card"]}>
-          <FaReact className={styles["stack-icon"]} />
-          <p>React</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <FaJs className={styles["stack-icon"]} />
-          <p>JavaScript</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <FaCss3Alt className={styles["stack-icon"]} />
-          <p>CSS3 / UI UX</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiNextdotjs className={styles["stack-icon"]} />
-          <p>Next.js</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiSupabase className={styles["stack-icon"]} />
-          <p>Supabase</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <FaPhp className={styles["stack-icon"]} />
-          <p>PHP / MySQL</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiTypescript className={styles["stack-icon"]} />
-          <p>TypeScript</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <FaNodeJs className={styles["stack-icon"]} />
-          <p>Node.js</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiExpress className={styles["stack-icon"]} />
-          <p>Express</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiVite className={styles["stack-icon"]} />
-          <p>Vite</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiTailwindcss className={styles["stack-icon"]} />
-          <p>Tailwind CSS</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <FaGitAlt className={styles["stack-icon"]} />
-          <p>Git / GitHub</p>
-        </div>
-
-        <div className={styles["stack-card"]}>
-          <SiMercadopago className={styles["stack-icon"]} />
-          <p>Mercado Pago</p>
-        </div>
-
+        {STACKS.map(({ name, Icon, color }) => (
+          <div
+            key={name}
+            className={styles["stack-card"]}
+            style={{ "--icon-color": color }}
+          >
+            <Icon className={styles["stack-icon"]} />
+            <p>{name}</p>
+          </div>
+        ))}
       </div>
-
     </section>
   );
 }

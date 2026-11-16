@@ -2,51 +2,62 @@
 .diferenciais-section {
   width: 100%;
   max-width: 1200px;
-  /* Reduzi o 80px superior para 40px ou o valor que preferir */
-  padding: 0px 20px 80px 20px; 
+  padding: 0px 20px 80px 20px;
   z-index: 10;
-  
-  /* Se você quiser "puxar" a seção para cima, adicione margem negativa */
-  margin-top: -30px; 
+  margin-top: -30px;
 }
 
 .diferenciais-grid {
   display: grid;
-grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   width: 100%;
 }
 
 .diferencial-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(233, 30, 99, 0.15);
+  background: linear-gradient(155deg, #1b1042 0%, #110829 100%);
+  border: 1.5px solid rgba(255, 0, 204, 0.45);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  box-shadow:
+    -6px -6px 24px rgba(255, 0, 204, 0.18),
+    6px 6px 28px rgba(161, 0, 255, 0.25),
+    0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
 .diferencial-card:hover {
   transform: translateY(-8px);
-  border-color: #e91e63;
-  background: rgba(233, 30, 99, 0.05);
-  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.1);
+  border-color: var(--neon-pink);
+  background: linear-gradient(155deg, #241557 0%, #160b36 100%);
+  box-shadow:
+    -10px -10px 35px rgba(255, 0, 204, 0.35),
+    10px 10px 40px rgba(161, 0, 255, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.55);
 }
 
 .icon-box {
-  width: 60px;
-  height: 60px;
-  background: rgba(233, 30, 99, 0.1);
-  border-radius: 15px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 26px;
   margin: 0 auto 25px auto;
-  color: #e91e63;
-  border: 1px solid rgba(233, 30, 99, 0.2);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 6px 22px rgba(255, 0, 204, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
+.diferencial-card:hover .icon-box {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(255, 0, 204, 0.6);
+}
+
 .diferencial-card h3 {
   color: #ffffff;
   font-size: 1.35rem;
@@ -55,34 +66,30 @@ grid-template-columns: repeat(3, 1fr);
 }
 
 .diferencial-card p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.95rem;
   line-height: 1.6;
 }
-
-
 
 /* ==========================================================================
    RESPONSIVIDADE DOS DIFERENCIAIS
    ========================================================================== */
 
-/* Telas médias (Tablets e Notebooks menores): 2 colunas */
 @media screen and (max-width: 992px) {
   .diferenciais-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Telas pequenas (Celulares): 1 coluna */
 @media screen and (max-width: 768px) {
   .diferenciais-section {
     padding-bottom: 40px;
-    margin-top: 0; /* Remove a margem negativa que pode atrapalhar no mobile */
+    margin-top: 0;
   }
 
   .diferenciais-grid {
-    grid-template-columns: 1fr; /* Força os cards a ficarem um abaixo do outro */
-    gap: 20px; /* Reduz o espaço entre os cards */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .diferencial-card {

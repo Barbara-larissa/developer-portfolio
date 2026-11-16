@@ -1,9 +1,11 @@
 import styles from "./Footer.module.css";
+import logo from "./img/logo.png";
 
 export default function Footer() {
   return (
     <footer className={styles["footer-section"]}>
       <div className={styles["footer-card"]}>
+
         {/* Lado esquerdo */}
         <div className={styles["text-group"]}>
           <h2 className={styles.title}>
@@ -15,20 +17,34 @@ export default function Footer() {
             modernas, responsivas e focadas na experiência do usuário.
           </p>
 
-          <p className={styles.copy}>
-            © 2026 Barbara Larissa. Todos os direitos reservados.
-          </p>
+          {/* Copyright e assinatura da marca */}
+          <div className={styles["footer-bottom"]}>
+            <p className={styles.copy}>
+              © 2026 Barbara Larissa. Todos os direitos reservados.
+            </p>
+
+            <img
+              src={logo}
+              alt="LaribDev - Desenvolvimento Web"
+              className={styles["brand-signature"]}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
 
         {/* Lado direito */}
         <div className={styles["action-group"]}>
+
+          {/* WhatsApp */}
           <a
             href="https://wa.me/5543996818242?text=Ol%C3%A1%20Barbara!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={styles["btn-contact"]}
           >
             Solicitar Orçamento
+
             <i
               className="fa-regular fa-paper-plane"
               aria-hidden="true"
@@ -37,11 +53,12 @@ export default function Footer() {
 
           {/* Redes sociais */}
           <div className={styles["social-row"]}>
+
             {/* GitHub */}
             <a
               href="https://github.com/Barbara-larissa"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={styles["social-icon"]}
               title="GitHub"
               aria-label="GitHub"
@@ -53,11 +70,11 @@ export default function Footer() {
               />
             </a>
 
-            {/* LinkedIn sem fundo azul */}
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/barbara-larissa/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={styles["social-icon"]}
               title="LinkedIn"
               aria-label="LinkedIn"
@@ -74,14 +91,16 @@ export default function Footer() {
               href="mailto:laribdev@gmail.com"
               className={styles["social-icon"]}
               title="E-mail"
-              aria-label="E-mail"
+              aria-label="Enviar e-mail"
             >
               <span className={styles["email-icon"]}>
                 ✉
               </span>
             </a>
+
           </div>
         </div>
+
       </div>
     </footer>
   );

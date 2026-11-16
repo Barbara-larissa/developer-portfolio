@@ -129,9 +129,9 @@ export default function App() {
                 {/* Lado Esquerdo: Textos, Botões e Links Sociais */}
                 <div className="hero-text-side">
                   <h1 className="title">Barbara Larissa</h1>
-<p className="subtitle">
-  <Typewriter words={["FRONT-END & UI DEVELOPER"]} speed={100} />
-</p>
+                  <p className="subtitle">
+                    <Typewriter words={["FRONT-END & UI DEVELOPER"]} speed={100} />
+                  </p>
 
                   <div className="main-container-hero">
                     <div className="button-group">
@@ -192,20 +192,36 @@ export default function App() {
                 </div>
 
                 {/* Lado Direito: Sua Foto em Círculo com Efeito Glow */}
-                <div className="hero-image-side ">
-                  <div className="profile-circle-wrapper">
-                    <img
-                      src={minhaFoto}
-                      alt="Barbara Larissa"
-                      className="profile-avatar-img"
-                    />
-                  </div>
+               {/* Lado Direito: Foto com tecnologias flutuantes */}
+<div className="hero-image-side">
+  <div className="profile-circle-wrapper">
 
+    {/* Foto profissional */}
+    <img
+      src={minhaFoto}
+      alt="Barbara Larissa"
+      className="profile-avatar-img"
+    />
 
+    {/* Ícones de tecnologias */}
+<div className="floating-tech tech-react">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+</div>
 
+<div className="floating-tech tech-js">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+</div>
 
-                </div>
+<div className="floating-tech tech-html">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+</div>
 
+<div className="floating-tech tech-node">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+</div>
+
+  </div>
+</div>
               </div>
             </main>
 
@@ -223,9 +239,9 @@ export default function App() {
             </div>
 
             {/* Projetos: adicione a classe aqui */}
-          <div className="mobile-trigger">
-  <Projetos />
-</div>
+            <div className="mobile-trigger">
+              <Projetos />
+            </div>
 
 
 

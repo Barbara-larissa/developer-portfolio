@@ -5,73 +5,78 @@
   padding: 60px 20px;
   text-align: center;
   z-index: 10;
+  position: relative;
 }
 
 .stacks-section .section-title {
-  color: #ffffff; 
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  letter-spacing: 5px; 
+  font-weight: 300;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  font-size: 2rem; 
+  font-size: 2rem;
   margin-bottom: 40px;
-  display: block; 
+  display: block;
 }
 
 .stacks-grid {
   display: flex;
   justify-content: center;
-  gap: 12px; 
+  gap: 16px;
   flex-wrap: wrap;
   margin-top: 40px;
   width: 100%;
 }
 
 .stack-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(233, 30, 99, 0.2);
-  padding: 20px 15px; 
-  border-radius: 15px;
+  background: linear-gradient(155deg, #1b1042 0%, #110829 100%);
+  border: 1.5px solid rgba(255, 0, 204, 0.45);
+  padding: 24px 16px;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-  min-width: 100px; 
-  flex: 1; 
-  max-width: 150px; 
+  justify-content: center;
+  gap: 12px;
+  min-width: 120px;
+  flex: 1 1 130px;
+  max-width: 155px;
+  box-shadow:
+    -4px -4px 18px rgba(255, 0, 204, 0.16),
+    4px 4px 22px rgba(161, 0, 255, 0.24),
+    0 10px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
+
 .stack-card:hover {
-  transform: translateY(-5px);
-  background: rgba(233, 30, 99, 0.1);
-  border-color: #e91e63;
-  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.1);
+  transform: translateY(-6px);
+  border-color: var(--neon-pink);
+  background: linear-gradient(155deg, #241557 0%, #160b36 100%);
+  box-shadow:
+    -8px -8px 28px rgba(255, 0, 204, 0.32),
+    8px 8px 32px rgba(161, 0, 255, 0.38),
+    0 14px 32px rgba(0, 0, 0, 0.55);
 }
 
 .stack-icon {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e91e63;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--icon-color, var(--neon-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s ease;
+}
+
+.stack-card:hover .stack-icon {
+  transform: scale(1.12);
 }
 
 .stack-card p {
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
+  font-weight: 500;
   margin: 0;
 }
-/* ... seu código existente ... */
-
-/* Ajuste o tamanho do ícone aqui */
-.stack-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-/* Aplicação das cores por ordem (nth-child) */
-.stack-card:nth-child(1) .stack-icon { color: #61DAFB; } /* React */
-.stack-card:nth-child(2) .stack-icon { color: #F7DF1E; } /* JS */
-.stack-card:nth-child(3) .stack-icon { color: #1572B6; } /* CSS3 */
-.stack-card:nth-child(4) .stack-icon { color: #06B6D4; } /* Tailwind */
-.stack-card:nth-child(5) .stack-icon { color: #FFCA28; } /* Firebase */
-.stack-card:nth-child(6) .stack-icon { color: #777BB4; } /* PHP */
