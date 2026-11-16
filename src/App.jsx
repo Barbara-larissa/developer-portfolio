@@ -175,18 +175,19 @@ export default function App() {
                         />
                       </a>
 
-                      <a
-                        href="https://www.linkedin.com/in/barbara-larissa/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="icon-link-minimal"
-                      >
-                        <img
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-                          className="icon-only-linkedin"
-                          alt="LinkedIn"
-                        />
-                      </a>
+                     <a
+  href="https://www.linkedin.com/in/barbara-larissa/"
+  target="_blank"
+  rel="noreferrer"
+  className="icon-link-minimal"
+  aria-label="LinkedIn"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg"
+    className="icon-only-linkedin"
+    alt="LinkedIn"
+  />
+</a>
                     </div>
                   </div>
                 </div>
