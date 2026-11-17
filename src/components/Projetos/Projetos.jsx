@@ -41,31 +41,7 @@ export default function Projetos() {
   // ==========================================
 
   const projetosPessoais = [
-    {
-      id: "sabor-real",
-      titulo: "Sabor Real",
-      descricao:
-        "Sistema de delivery completo com cardápio, carrinho, integração com Mercado Pago, WhatsApp, ViaCEP e painel administrativo para gerenciamento de pedidos.",
-      tags: ["React", "TypeScript", "Node.js", "Mercado Pago"],
-      video:
-        "https://player.cloudinary.com/embed/?cloud_name=yelovqtt&public_id=Sabor_Real_X-Tudo_e_Dog%C3%A3o_na_Zona_Norte_de_Londrina_e_mais_3_p%C3%A1ginas_-_Pessoal_Microsoft_Edge_2026-09-23_23-26-02_zncbeg",
-      videoTitle: "Sabor Real - Sistema de Delivery",
-       imagem: capareal,
-      badge: "Projeto em Destaque",
-      badgeType: "soon",
-      links: [
-        {
-          label: "Ver Código",
-          href: "https://github.com/Barbara-larissa/sabor-real-lanches",
-          type: "secondary",
-        },
-        {
-          label: "Ver Projeto",
-          href: "https://sabor-real-lanches.vercel.app/",
-          type: "secondary",
-        },
-      ],
-    },
+   
 
     {
       id: "sistema-financeiro",
