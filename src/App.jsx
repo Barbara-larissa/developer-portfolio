@@ -14,6 +14,10 @@ import Diferenciais from "./components/Diferenciais/Diferenciais";
 import Timeline from './components/Timeline/Timeline';
 import Footer from "./components/Footer/Footer";
 import Typewriter from "./components/Typewriter/Typewriter";
+
+import { Cursor } from './components/Cursor/Cursor';
+
+
 /* Componente dos Meteoros (Estilo Shadcn/Aceternity) */
 const Meteors = ({ number = 90 }) => {
   const [meteorStyles, setMeteorStyles] = useState([]);
@@ -115,6 +119,7 @@ export default function App() {
 
   return (
     <>
+    <Cursor />
       <div className="app-container">
         {init && <Particles options={particlesOptions} />}
         <Meteors number={15} />
