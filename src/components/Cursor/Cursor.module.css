@@ -1,3 +1,10 @@
+/* Trava definitivamente qualquer vazamento lateral causado pelo cursor ou partículas */
+:global(html),
+:global(body) {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @media (pointer: fine) {
   :global(html),
   :global(body),
@@ -14,6 +21,15 @@
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
+}
+
+/* Esconde completamente o foguete em telas touch (celular e tablet) */
+@media (pointer: coarse), (max-width: 768px) {
+  .rocketWrapper,
+  .particle,
+  .pulseRing {
+    display: none !important;
+  }
 }
 
 .rocketSvg {

@@ -8,6 +8,9 @@ export function Cursor() {
   const currentAngle = useRef(0);
 
   useEffect(() => {
+    // Não ativa o cursor customizado em dispositivos touch (celular/tablet)
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
     const wrapper = wrapperRef.current;
     const svg = svgRef.current;
     if (!wrapper || !svg) return;
@@ -16,12 +19,9 @@ export function Cursor() {
       const dx = e.clientX - lastPos.current.x;
       const dy = e.clientY - lastPos.current.y;
 
-      // Calcula o ângulo 360° quando há movimento relevante
       if (Math.hypot(dx, dy) > 2) {
-        // +135 graus compensa o desenho original do SVG (que aponta para cima-esquerda)
         const targetAngle = Math.atan2(dy, dx) * (180 / Math.PI) + 135;
 
-        // Evita que o foguete dê um "pulo" brusco ao cruzar o limite de -180°/180°
         let delta = targetAngle - currentAngle.current;
         while (delta > 180) delta -= 360;
         while (delta < -180) delta += 360;
@@ -30,11 +30,9 @@ export function Cursor() {
         lastPos.current = { x: e.clientX, y: e.clientY };
       }
 
-      // Move o container e rotaciona o foguete suavemente em 360°
       wrapper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       svg.style.transform = `translate(-50%, -50%) rotate(${currentAngle.current}deg)`;
 
-      // Solta o rastro brilhante atrás do propulsor
       createParticle(e.clientX, e.clientY, false);
     };
 
@@ -51,16 +49,19 @@ export function Cursor() {
         ? `${styles.particle} ${styles.burst}`
         : styles.particle;
 
-      // Calcula a posição exata da traseira do foguete conforme o ângulo atual
       const rad = (currentAngle.current - 135) * (Math.PI / 180);
       const offsetX = isBurst ? 0 : -Math.cos(rad) * 14;
       const offsetY = isBurst ? 0 : -Math.sin(rad) * 14;
 
-      particle.style.left = `${x + offsetX}px`;
-      particle.style.top = `${y + offsetY}px`;
+      // Garante que a partícula não ultrapasse as bordas da tela
+      const safeX = Math.min(Math.max(x + offsetX, 8), window.innerWidth - 12);
+      const safeY = Math.min(Math.max(y + offsetY, 8), window.innerHeight - 12);
+
+      particle.style.left = `${safeX}px`;
+      particle.style.top = `${safeY}px`;
 
       const angle = Math.random() * Math.PI * 2;
-      const distance = isBurst ? Math.random() * 45 + 15 : Math.random() * 12;
+      const distance = isBurst ? Math.random() * 35 + 10 : Math.random() * 10;
       particle.style.setProperty('--dx', `${Math.cos(angle) * distance}px`);
       particle.style.setProperty('--dy', `${Math.sin(angle) * distance}px`);
 
